@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  jupyter_torch_gpu:
+    build:
+        context: .
+        dockerfile: jupyter.dockerfile
+    working_dir: /work/
+    #runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+        - 5571:8888
+    command: "jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''"
+    container_name: jupyter_torch_gpu
+    restart: always
+    mem_limit: 50g
+
