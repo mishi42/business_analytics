@@ -5,7 +5,7 @@ services:
     #image: rocker/ml-verse
     build :
        context: .
-       dockerfile: ./r_studio.dockerfile
+       dockerfile: ./rstudio.dockerfile
     #deploy:
     #  resources:
     #    reservations:
