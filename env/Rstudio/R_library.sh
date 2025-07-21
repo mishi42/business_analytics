@@ -1,64 +1,52 @@
-install2.r --error --skipmissing \
-    # graphic handling ============================================================================
+install2.r --error --skipmissing --skipinstalled \
+    checkpoint \
+    pacman rmarkdown rticles knitr DT reactable \
+    kable kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable \
+    sessioninfo quarto flextable htmlTable parameters pander \
+    htmlwidgets gt gtsummary \
+    renv stargazer huxtable \
+    bookdown markdown docxtractr testthat \
+    excel.link XLConnect readxl openxlsx tinytex \
     dbplyr \
+    DBI RODBC duckplyr arrow aws.s3 bigrquery \
     ggh4x \
-    ggquiver \
-    ggExtra \
-    # bayes ============================================================================
-    tidybayes \
+    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar \
+    colormap flexdashboard ggridges ggdist GGally ggstatsplot ggrepel \
+    ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats gwordcloud tidyterra \
+    vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif \
+    gplots modelbased \
+    furrr \
+    tidylog \
     rstan \
-    rstanarm \
-    bayesplot \
-   #document ============================================================================
-    rticles \
-    rmarkdown \
-    knitr \
-    DT \
-    htmlwidgets \
-    bookdown \
-    tableone \
-    knitr \
-    sessioninfo \
-    tinytex \
-    latex2exp \
-    distill \
-    equatiomatic \
-    kable \
-    kableExtra \
-    readxl \
-    docxtractr \
+    rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack BLR tidybayes multilevelmod \
+    tidyposterior dprng bartMachine broom.mixed loo rstantools shinystan projpred posterior \
     gapminder \
-    ftExtra \
-    reactable \
-    minidown \
-    rvest \
-    RSelenium \
-    stringr \
-    polite \
-    renv \
-    targets \
-    cronR \
-    openxlsx \
-    drat \
-    OpenCL \
-    DBI \
-    spatialsample \
-    ggthemes \
-    Rtsne \
-    gtsummary \
+    rvest RSelenium \
     corrplot \
-    modelsummary \
-    rBaysianOptimization \
-    RODBC \
-    skimr \
-    progress \
-    stringi \
-    excel.link \
-    XLConnect \
-    patchwork \
-    sen2r \
-    languageserver
-
-#bayes
-R -q -e 'tinytex::install_tinytex(force = TRUE);tinytex::tlmgr_install("ipaex")'
-
+    Rtsne psych dirichletprocess statmod embed \
+    modelsummary skimr catdap stacks bonsai glmnet vars rBaysianOptimization \
+    tidymodels xgboost lightgbm ranger normtest lars nlme \
+    partikyt rpart.plot earth DataExplorer BVAR finetune sem semTools \
+    semPlot lavaan lme4 mclust doFuture e1071 glmmTMB parameters \
+    fixest \
+    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms \
+    sampleSelection \
+    CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
+    DALEX tidytreatment Amelia ivpack MtachIt grf fwildclusterboot survey rbounds \
+    bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
+    imputeMissings \
+    Rdimtools \
+    VBsparsePCA Robyn mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA \
+    conjoint bayesm invgamma rrecsys recommenderlab recosystem NMF \
+    tidytext \
+    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods \
+    quanteda widyr \
+    tableone \
+    rnaturalearth \
+    latex2exp distill \
+    equatiomatic ftExtra minidown \
+    polite targets \
+    cronR drat \
+    OpenCL spatialsample \
+    progress sen2r  \
+    languageserver here janitor
