@@ -48,6 +48,8 @@ RUN R -q -e 'reticulate::install_python(version = "3.12")'
 RUN R -q -e 'reticulate::virtualenv_create("r-reticulate")'
 RUN R -q -e 'reticulate::py_install("nevergrad", pip = TRUE)'
 
+RUN R -q -e 'devtools::install_github("ebenmichael/augsynth")'
+
 
 #compose fileからのディレクトリの位置。フォルダはコピーされない
 COPY ./shell/ /work/env/
