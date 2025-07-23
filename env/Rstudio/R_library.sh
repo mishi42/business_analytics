@@ -34,7 +34,7 @@ install2.r --error --skipmissing --skipinstalled \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
     DALEX tidytreatment Amelia ivpack MtachIt grf fwildclusterboot survey rbounds \
     bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
-    imputeMissings \
+    imputeMissings Synth tidysynth gsynth panelView PanelMatch \
     Rdimtools \
     VBsparsePCA Robyn mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA \
     conjoint bayesm invgamma rrecsys recommenderlab recosystem NMF \
