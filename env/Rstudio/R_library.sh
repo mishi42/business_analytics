@@ -29,12 +29,12 @@ install2.r --error --skipmissing --skipinstalled \
     partikyt rpart.plot earth DataExplorer BVAR finetune sem semTools \
     semPlot lavaan lme4 mclust doFuture e1071 glmmTMB parameters \
     fixest \
-    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms \
+    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
     DALEX tidytreatment Amelia ivpack MtachIt grf fwildclusterboot survey rbounds \
     bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
-    imputeMissings Synth tidysynth gsynth panelView PanelMatch \
+    imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth \
     Rdimtools \
     VBsparsePCA Robyn mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA \
     conjoint bayesm invgamma rrecsys recommenderlab recosystem NMF \
