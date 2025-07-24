@@ -15,26 +15,29 @@ install2.r --error --skipmissing --skipinstalled \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats gwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif \
     gplots modelbased \
+    flexdashboard 
+    shiny shinydashboard bslib shinytest shinyFiles \
     furrr \
     tidylog \
     rstan \
     rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack BLR tidybayes multilevelmod \
     tidyposterior dprng bartMachine broom.mixed loo rstantools shinystan projpred posterior \
-    gapminder \
+    gapminder BMA loo \
     rvest RSelenium \
     corrplot \
     Rtsne psych dirichletprocess statmod embed \
     modelsummary skimr catdap stacks bonsai glmnet vars rBaysianOptimization \
     tidymodels xgboost lightgbm ranger normtest lars nlme \
     partikyt rpart.plot earth DataExplorer BVAR finetune sem semTools \
-    semPlot lavaan lme4 mclust doFuture e1071 glmmTMB parameters \
+    semPlot lavaan lme4 mclust doFuture e1071 glmmTMB parameters tidyrules \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
     DALEX tidytreatment Amelia ivpack MtachIt grf fwildclusterboot survey rbounds \
     bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
-    imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth \
+    imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte \
+    counterfactuals iml \
     Rdimtools \
     VBsparsePCA Robyn mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA \
     conjoint bayesm invgamma rrecsys recommenderlab recosystem NMF \
