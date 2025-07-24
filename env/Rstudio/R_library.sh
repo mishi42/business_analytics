@@ -51,5 +51,5 @@ install2.r --error --skipmissing --skipinstalled \
     polite targets \
     cronR drat \
     OpenCL spatialsample \
-    progress sen2r  \
+    progress sen2r  miniCRAN \
     languageserver here janitor
