@@ -25,7 +25,7 @@ install2.r --error --skipmissing --skipinstalled \
     gapminder BMA loo \
     rvest RSelenium \
     corrplot \
-    Rtsne psych dirichletprocess statmod embed \
+    Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBaysianOptimization \
     tidymodels xgboost lightgbm ranger normtest lars nlme \
     partikyt rpart.plot earth DataExplorer BVAR finetune sem semTools \
