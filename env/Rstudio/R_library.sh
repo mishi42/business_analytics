@@ -8,7 +8,7 @@ install2.r --error --skipmissing --skipinstalled \
     bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx tinytex \
     dbplyr \
-    DBI RODBC duckplyr arrow aws.s3 bigrquery \
+    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL aws.s3 \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar \
     colormap flexdashboard ggridges ggdist GGally ggstatsplot ggrepel \
