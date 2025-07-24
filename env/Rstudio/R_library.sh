@@ -1,7 +1,7 @@
 install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles knitr DT reactable \
-    kable kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable \
+    knitr kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable \
     sessioninfo quarto flextable htmlTable parameters pander \
     htmlwidgets gt gtsummary \
     renv stargazer huxtable \
