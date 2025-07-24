@@ -12,7 +12,7 @@ install2.r --error --skipmissing --skipinstalled \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar \
     colormap flexdashboard ggridges ggdist GGally ggstatsplot ggrepel \
-    ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats gwordcloud tidyterra \
+    ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif \
     gplots modelbased \
     flexdashboard 
@@ -34,7 +34,7 @@ install2.r --error --skipmissing --skipinstalled \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
-    DALEX tidytreatment Amelia ivpack MtachIt grf fwildclusterboot survey rbounds \
+    DALEX tidytreatment Amelia ivpack MatchIt grf fwildclusterboot survey rbounds \
     bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
     imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte \
     counterfactuals iml \
