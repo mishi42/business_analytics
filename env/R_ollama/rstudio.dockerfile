@@ -9,10 +9,6 @@ RUN sed -i '$d' /etc/locale.gen \
     && locale-gen ja_JP.UTF-8 \
     && /usr/sbin/update-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
 
-RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "deepseek-coder-v2:16b",base_url = "http://ollama:11434"), \
-                  .lang_chat = ellmer::chat_ollama(model = "gemma3:1b",,base_url = "http://ollama:11434"))' >  ~/.Rprofile
-
-
 RUN /bin/bash -c "source /etc/default/locale"
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
@@ -20,7 +16,8 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 RUN apt-get update && \
     apt-get install -y \
     fonts-ipaexfont fonts-noto-cjk pandoc \
-    mecab libmecab-dev mecab-ipadic mecab-ipadic-utf8 \
+    mecab libmecab-dev mecab-ipadic \
+    # mecab-ipadic-utf8 \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev \
@@ -51,7 +48,7 @@ RUN R -q -e 'remotes::install_github("nx10/httpgd")'
 #RUN R -q -e 'reticulate::py_install("nevergrad", pip = TRUE)'
 RUN R -q -e 'devtools::install_github("ebenmichael/augsynth")'
 RUN R -q -e 'pak::pak("mlverse/lang"); \
-             rdevtools::install_github("frankiethull/kuzco"); \
+             devtools::install_github("frankiethull/kuzco"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              remotes::install_github("bgreenwell/statlingua"); \
              remotes::install_github("anna-neufeld/treevalues");\
@@ -115,6 +112,10 @@ RUN install2.r --error --skipmissing --skipinstalled \
     languageserver here janitor \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall
+
+
+RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "deepseek-coder-v2:16b",base_url = "http://ollama:11434"), \
+                  .lang_chat = ellmer::chat_ollama(model = "gemma3:1b",,base_url = "http://ollama:11434"))' >  ~/.Rprofile
 
 
 #compose fileからのディレクトリの位置。フォルダはコピーされない
