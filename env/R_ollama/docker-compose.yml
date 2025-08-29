@@ -1,19 +1,25 @@
 version: "3.7"
 services:
   rstudio:
-    image: rocker/tidyverse
-    #container_name: rocker_bis
-    #build :
-    #   context: .
-    #   dockerfile: ./rstudio.dockerfile
+    #image: rocker/tidyverse
+    container_name: rstudio_llm
+    build :
+       context: .
+       dockerfile: ./rstudio.dockerfile
     environment:
       - USERNAME=rstudio
       - PASSWORD=rstudio1234
       - TZ=Asia/Tokyo
     ports:
       - 8787:8787
-    #volumes:
-    #  - ./mnt:/mnt
+      - 3838:3838
+      - 9991:9991
+      - 9992:9992
+      - 9993:9993
+      - 9994:9994
+      - 9995:9995
+    volumes:
+      - ./mnt:/mnt
     #working_dir: /work
     tty: true
     restart: always
@@ -23,7 +29,11 @@ services:
       - r_ollama_net
 
   ollama:
-    image: ollama/ollama
+    #image: ollama/ollama
+    container_name: r_ollama
+    build :
+       context: .
+       dockerfile: ./ollama.dockerfile
     ports:
       - 11434:11434
     tty: true
@@ -34,5 +44,3 @@ services:
 networks:
   r_ollama_net:
     driver: bridge
-
-
