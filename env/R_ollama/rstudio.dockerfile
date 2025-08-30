@@ -34,26 +34,29 @@ RUN mkdir /work && \
     mkdir /work/env/
 #japanese font
 RUN install2.r --error --skipmissing --skipinstalled extrafont remotes
-RUN R -q -e 'extrafont::font_import(prompt = FALSE)'
-RUN R -q -e 'install.packages("devtools"); \
+RUN R -q -e 'extrafont::font_import(prompt = FALSE); \
+             install.packages("devtools"); \
              install.packages("pak");'
 
-RUN R -q -e 'remotes::install_github("lchiffon/wordcloud2")'
-RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R") '
-RUN R -q -e 'remotes::install_github("m-clark/mixedup")'
-RUN R -q -e 'remotes::install_github("nx10/httpgd")'
-#RUN R -q -e 'install.packages("reticulate")'
-#RUN R -q -e 'reticulate::install_python(version = "3.12")'
-#RUN R -q -e 'reticulate::virtualenv_create("r-reticulate")'
-#RUN R -q -e 'reticulate::py_install("nevergrad", pip = TRUE)'
-RUN R -q -e 'devtools::install_github("ebenmichael/augsynth")'
-RUN R -q -e 'pak::pak("mlverse/lang"); \
+RUN R -q -e 'remotes::install_github("lchiffon/wordcloud2"); \
+             install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
+             remotes::install_github("m-clark/mixedup"); \
+             remotes::install_github("nx10/httpgd"); \
+             install.packages("reticulate"); \ 
+             reticulate::install_python(version = "3.12"); \
+             reticulate::virtualenv_create("r-reticulate"); \
+             reticulate::py_install("nevergrad", pip = TRUE); \
+             devtools::install_github("ebenmichael/augsynth"); \
+             pak::pak("mlverse/lang"); \
              devtools::install_github("frankiethull/kuzco"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              remotes::install_github("bgreenwell/statlingua"); \
              remotes::install_github("anna-neufeld/treevalues");\
              devtools::install_github("heurekalabsco/axolotr"); \
-             remotes::install_github("lawremi/wizrd") ;' 
+             remotes::install_github("lawremi/wizrd") ; \
+             remotes::install_github("mlr-org/mlr3extralearners"); \
+             remotes::install_github("mlr-org/mlr3automl"); \
+             remotes::install_github("mlr-org/mlr3viz");' 
 
 
 
@@ -62,21 +65,18 @@ RUN install2.r --error --skipmissing --skipinstalled \
     pacman rmarkdown rticles knitr DT reactable \
     knitr kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable \
     sessioninfo quarto flextable htmlTable parameters pander  \
-    htmlwidgets gt gtsummary \
-    renv stargazer huxtable \
-    bookdown markdown docxtractr testthat \
+    htmlwidgets gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx tinytex \
     dbplyr \
-    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs \
+    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif \
-    gplots modelbased \
+    gplots modelbased rnaturalearth imager tesseract \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat \
-    furrr \
     tidylog \
     rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior \
@@ -86,6 +86,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBaysianOptimization \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz \
+    mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools \
     semPlot lavaan lme4 mclust doFuture parameters tidyrules aqua \
     fixest \
@@ -114,10 +115,15 @@ RUN install2.r --error --skipmissing --skipinstalled \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall
 
 
-RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "deepseek-coder-v2:16b",base_url = "http://ollama:11434"), \
-                  .lang_chat = ellmer::chat_ollama(model = "gemma3:1b",,base_url = "http://ollama:11434"))' >  ~/.Rprofile
+RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"), \
+                  .lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >  ~/.Rprofile
 
+##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
+##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
 
+RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
+
+                  
 #compose fileからのディレクトリの位置。フォルダはコピーされない
 #COPY ./shell/ /work/env/
 
