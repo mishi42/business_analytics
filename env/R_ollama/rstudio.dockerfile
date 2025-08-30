@@ -115,15 +115,15 @@ RUN install2.r --error --skipmissing --skipinstalled \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall
 
 
-RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"), \
-                  .lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >  ~/.Rprofile
-
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
 
 RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
 
-                  
+RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' > ~/.Rprofile && \
+         'options(.lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >>  ~/.Rprofile  
+
+
 #compose fileからのディレクトリの位置。フォルダはコピーされない
 #COPY ./shell/ /work/env/
 
