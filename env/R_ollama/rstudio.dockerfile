@@ -38,26 +38,26 @@ RUN R -q -e 'extrafont::font_import(prompt = FALSE); \
              install.packages("devtools"); \
              install.packages("pak");'
 
-RUN R -q -e 'remotes::install_github("lchiffon/wordcloud2"); \
-             install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
-             remotes::install_github("m-clark/mixedup"); \
-             remotes::install_github("nx10/httpgd"); \
-             install.packages("reticulate"); \ 
-             reticulate::install_python(version = "3.12"); \
-             reticulate::virtualenv_create("r-reticulate"); \
-             reticulate::py_install("nevergrad", pip = TRUE); \
-             devtools::install_github("ebenmichael/augsynth"); \
-             pak::pak("mlverse/lang"); \
-             devtools::install_github("frankiethull/kuzco"); \
-             devtools::install_github("AlbertRapp/tidychatmodels"); \
-             remotes::install_github("bgreenwell/statlingua"); \
-             remotes::install_github("anna-neufeld/treevalues");\
-             devtools::install_github("heurekalabsco/axolotr"); \
-             remotes::install_github("lawremi/wizrd") ; \
-             remotes::install_github("mlr-org/mlr3extralearners"); \
-             remotes::install_github("mlr-org/mlr3automl"); \
-             remotes::install_github("mlr-org/mlr3viz");' 
+#RUN R -q -e 'devtools::install_github("lchiffon/wordcloud2")'
+RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
+             #remotes::install_github("m-clark/mixedup"); \
+             #remotes::install_github("nx10/httpgd"); \
+             #devtools::install_github("ebenmichael/augsynth"); \
+             pak::pak("mlverse/lang");'
+             #devtools::install_github("frankiethull/kuzco"); \
+             #devtools::install_github("AlbertRapp/tidychatmodels"); \
+             #remotes::install_github("bgreenwell/statlingua"); \
+             #remotes::install_github("anna-neufeld/treevalues");\
+             #devtools::install_github("heurekalabsco/axolotr"); \
+             #remotes::install_github("lawremi/wizrd") ;'
+             #remotes::install_github("mlr-org/mlr3extralearners"); \
+             #remotes::install_github("mlr-org/mlr3automl"); \
+             #remotes::install_github("mlr-org/mlr3viz");' 
 
+             #install.packages("reticulate"); \ 
+             #reticulate::install_python(version = "3.12"); \
+             #reticulate::virtualenv_create("r-reticulate"); \
+             #reticulate::py_install("nevergrad", pip = TRUE); \
 
 
 RUN install2.r --error --skipmissing --skipinstalled \
@@ -78,7 +78,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat \
     tidylog \
-    rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod \
+    rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior \
     BMA loo \
     rvest RSelenium \
