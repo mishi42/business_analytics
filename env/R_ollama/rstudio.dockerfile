@@ -109,7 +109,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     polite targets \
     cronR drat \
     OpenCL spatialsample \
-    progress sen2r  miniCRAN \
+    progress sen2r miniCRAN \
     languageserver here janitor \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall
@@ -118,10 +118,14 @@ RUN install2.r --error --skipmissing --skipinstalled \
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
 
+
+RUN apt-get install -y libtesseract-dev libleptonica-dev tesseract-ocr-eng && \
+    apt-get install -y tesseract-ocr-jpn 
+
 RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
 
-RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' > ~/.Rprofile && \
-         'options(.lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >>  ~/.Rprofile  
+#RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' > ~/.Rprofile && \
+#         'options(.lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >>  ~/.Rprofile  
 
 
 #compose fileからのディレクトリの位置。フォルダはコピーされない
