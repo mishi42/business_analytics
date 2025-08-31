@@ -14,7 +14,7 @@ RUN apt-get update && \
 RUN ollama serve & \
     until curl -s http://localhost:11434/api/tags >/dev/null; do sleep 1; done && \
     ollama pull gemma3:1b && \
-    ollama pull deepseek-coder-v2:16b && \
+    #ollama pull deepseek-coder-v2:16b && \
     ollama pull gemma3:4b && \
     snowflake-arctic-embed2:568m && \
     pkill ollama
