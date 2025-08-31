@@ -88,7 +88,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools \
-    semPlot lavaan lme4 mclust doFuture parameters tidyrules aqua \
+    semPlot lavaan lme4 mclust doFuture parameters tidyrules agua \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
@@ -114,6 +114,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall
 
+RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
@@ -123,6 +124,8 @@ RUN apt-get install -y libtesseract-dev libleptonica-dev tesseract-ocr-eng && \
     apt-get install -y tesseract-ocr-jpn 
 
 RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
+
+
 
 #RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' > ~/.Rprofile && \
 #         'options(.lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >>  ~/.Rprofile  
