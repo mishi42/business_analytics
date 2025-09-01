@@ -16,7 +16,7 @@ RUN ollama serve & \
     ollama pull llama3.2:1b && \
     #ollama pull deepseek-coder-v2:16b && \
     ollama pull gemma3:4b && \
-    snowflake-arctic-embed2:568m && \
+    nowflake-arctic-embed2:568m-l-fp16 && \
     pkill ollama
 
 
