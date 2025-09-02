@@ -74,7 +74,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif \
-    gplots modelbased rnaturalearth imager tesseract \
+    gplots modelbased rnaturalearth imager tesseract magick \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat \
     tidylog \
