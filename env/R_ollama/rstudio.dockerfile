@@ -33,10 +33,11 @@ RUN wget https://dvc.org/deb/dvc.list -O /etc/apt/sources.list.d/dvc.list && \
 RUN mkdir /work && \
     mkdir /work/env/
 #japanese font
-RUN install2.r --error --skipmissing --skipinstalled extrafont remotes
-RUN R -q -e 'extrafont::font_import(prompt = FALSE); \
-             install.packages("devtools"); \
+RUN install2.r --error --skipmissing --skipinstalled extrafont remotes showtext sysfonts
+#RUN R -q -e 'extrafont::font_import(prompt = FALSE); \
+RUN R -q -e 'install.packages("devtools"); \
              install.packages("pak");'
+             #sysfonts::font_add("noto", "NotoSansCJKjp-Regular.otf");  \
 
 #RUN R -q -e 'devtools::install_github("lchiffon/wordcloud2")'
 RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
@@ -64,17 +65,17 @@ RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles knitr DT reactable \
     knitr kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable \
-    sessioninfo quarto flextable htmlTable parameters pander  \
+    sessioninfo quarto flextable htmlTable parameters pander \
     htmlwidgets gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
-    excel.link XLConnect readxl openxlsx tinytex \
+    excel.link XLConnect readxl openxlsx tinytex Microsoft365R r2pptx officer officedown \
     dbplyr \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc \
     ggh4x \
-    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar \
-    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice \
+    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor \
+    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
-    vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif \
-    gplots modelbased rnaturalearth imager tesseract magick pdftools \
+    vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
+    gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat \
     tidylog \
@@ -85,10 +86,10 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBaysianOptimization \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
-    partykit rpart.plot earth DataExplorer BVAR finetune sem semTools \
-    semPlot lavaan lme4 mclust doFuture parameters tidyrules agua \
+    partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite \
+    semPlot lavaan lme4 mclust doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
@@ -114,7 +115,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall
 
-RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
+# RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
@@ -125,7 +126,23 @@ RUN apt-get install -y libtesseract-dev libleptonica-dev tesseract-ocr-eng && \
 
 RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
 
-
+# add user
+RUN sudo adduser user01 --disabled-password --gecos "" && \
+    sudo echo user01:'user01' | /usr/sbin/chpasswd && \
+    sudo adduser user02 --disabled-password --gecos "" && \
+    sudo echo user02:'user02' | /usr/sbin/chpasswd && \
+    sudo adduser user03 --disabled-password --gecos "" && \
+    sudo echo user03:'user03' | /usr/sbin/chpasswd && \
+    sudo adduser user04 --disabled-password --gecos "" && \
+    sudo echo user04:'user04' | /usr/sbin/chpasswd && \
+    sudo adduser user05 --disabled-password --gecos "" && \
+    sudo echo user05:'user05' | /usr/sbin/chpasswd && \
+    sudo adduser user06 --disabled-password --gecos "" && \
+    sudo echo user06:'user06' | /usr/sbin/chpasswd && \
+    sudo adduser user07 --disabled-password --gecos "" && \
+    sudo echo user07:'user07' | /usr/sbin/chpasswd && \
+    sudo adduser user08 --disabled-password --gecos "" && \
+    sudo echo user08:'user08' | /usr/sbin/chpasswd
 
 #RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' > ~/.Rprofile && \
 #         'options(.lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >>  ~/.Rprofile  
