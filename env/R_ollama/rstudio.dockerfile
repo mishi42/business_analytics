@@ -21,7 +21,7 @@ RUN apt-get update && \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev \
-    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping
+    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping 
     # texlive-full
 
 # DVC
@@ -33,10 +33,11 @@ RUN wget https://dvc.org/deb/dvc.list -O /etc/apt/sources.list.d/dvc.list && \
 RUN mkdir /work && \
     mkdir /work/env/
 #japanese font
-RUN install2.r --error --skipmissing --skipinstalled extrafont remotes showtext sysfonts
+RUN install2.r --error --skipmissing --skipinstalled extrafont remotes showtext sysfonts tinytex
 #RUN R -q -e 'extrafont::font_import(prompt = FALSE); \
 RUN R -q -e 'install.packages("devtools"); \
-             install.packages("pak");'
+             install.packages("pak"); \ 
+             tinytex::install_tinytex()'
              #sysfonts::font_add("noto", "NotoSansCJKjp-Regular.otf");  \
 
 #RUN R -q -e 'devtools::install_github("lchiffon/wordcloud2")'
@@ -67,7 +68,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     knitr kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable \
     sessioninfo quarto flextable htmlTable parameters pander \
     htmlwidgets gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
-    excel.link XLConnect readxl openxlsx tinytex Microsoft365R r2pptx officer officedown \
+    excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc \
     ggh4x \
