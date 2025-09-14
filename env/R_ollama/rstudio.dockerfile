@@ -72,7 +72,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor \
-    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl \
+    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl explore \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
