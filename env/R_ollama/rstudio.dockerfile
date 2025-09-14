@@ -125,8 +125,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
 RUN apt-get install -y libtesseract-dev libleptonica-dev tesseract-ocr-eng && \
     apt-get install -y tesseract-ocr-jpn 
 
-RUN R -q -e 'tesseract::tesseract_download(lang = "jpn"); \
-             sparklyr::spark_install()'
+RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
+RUN R -q -e 'sparklyr::spark_install();'
 
 # add user
 RUN sudo adduser user01 --disabled-password --gecos "" && \
