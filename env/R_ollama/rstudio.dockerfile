@@ -37,7 +37,7 @@ RUN install2.r --error --skipmissing --skipinstalled extrafont remotes showtext 
 #RUN R -q -e 'extrafont::font_import(prompt = FALSE); \
 RUN R -q -e 'install.packages("devtools"); \
              install.packages("pak"); \ 
-             tinytex::install_tinytex()'
+             tinytex::install_tinytex(force = T); '
              #sysfonts::font_add("noto", "NotoSansCJKjp-Regular.otf");  \
 
 #RUN R -q -e 'devtools::install_github("lchiffon/wordcloud2")'
