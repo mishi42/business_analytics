@@ -16,7 +16,7 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 RUN apt-get update && \
     apt-get install -y \
     fonts-ipaexfont fonts-noto-cjk pandoc \
-    mecab libmecab-dev mecab-ipadic \
+    mecab libmecab-dev mecab-ipadic libpoppler-cpp-dev \
     # mecab-ipadic-utf8 \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
@@ -73,7 +73,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor \
-    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl \
+    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph explore \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
