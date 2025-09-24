@@ -67,7 +67,3 @@ volumes:
 networks:
   r_ollama_net:
     driver: bridge
-
-networks:
-  r_ollama_net:
-    driver: bridge
