@@ -68,7 +68,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
 RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles DT reactable \
-    knitr kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable \
+    knitr kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable report \
     sessioninfo quarto flextable htmlTable parameters pander \
     htmlwidgets gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
@@ -168,6 +168,10 @@ RUN sudo adduser user01 --disabled-password --gecos "" && \
 
 #catdap2ext
 #RUN mkdir /work/catdap
+#WORKDIR /work/catdap
+
+#RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
+#    R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
 #WORKDIR /work/catdap
 
 #RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
