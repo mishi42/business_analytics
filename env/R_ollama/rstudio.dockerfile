@@ -40,14 +40,16 @@ RUN R -q -e 'install.packages("devtools"); \
              tinytex::install_tinytex(force = T); '
              #sysfonts::font_add("noto", "NotoSansCJKjp-Regular.otf");  \
 
-#RUN R -q -e 'devtools::install_github("lchiffon/wordcloud2")'
+#RUN R -q -e ''
 RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("m-clark/mixedup"); \
              #remotes::install_github("nx10/httpgd"); \
              #devtools::install_github("ebenmichael/augsynth"); \
+             devtools::install_github("AlbertRapp/tidychatmodels"); \
+             devtools::install_github("lchiffon/wordcloud2"); \
+             remotes::install_github("uribo/jpndistrict"); \
              pak::pak("mlverse/lang");'
              #devtools::install_github("frankiethull/kuzco"); \
-             #devtools::install_github("AlbertRapp/tidychatmodels"); \
              #remotes::install_github("bgreenwell/statlingua"); \
              #remotes::install_github("anna-neufeld/treevalues");\
              #devtools::install_github("heurekalabsco/axolotr"); \
@@ -64,7 +66,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
 
 RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
-    pacman rmarkdown rticles knitr DT reactable \
+    pacman rmarkdown rticles DT reactable \
     knitr kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable \
     sessioninfo quarto flextable htmlTable parameters pander \
     htmlwidgets gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
@@ -72,17 +74,19 @@ RUN install2.r --error --skipmissing --skipinstalled \
     dbplyr \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc \
     ggh4x \
-    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor \
+    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor ggeffects \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph explore \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
     flexdashboard \
-    shiny shinydashboard bslib shinytest shinyFiles shinychat \
+    shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML \
     tidylog \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior \
     BMA loo \
+    zipangu \
+    jpmesh kuniezu \
     rvest RSelenium \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
@@ -127,6 +131,11 @@ RUN apt-get install -y libtesseract-dev libleptonica-dev tesseract-ocr-eng && \
 
 RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
 RUN R -q -e 'sparklyr::spark_install();'
+
+
+#radiant
+RUN R -q -e 'install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/"); \
+             install.packages("radiant.update", repos = "https://radiant-rstats.github.io/minicran/")'
 
 # add user
 RUN sudo adduser user01 --disabled-password --gecos "" && \
