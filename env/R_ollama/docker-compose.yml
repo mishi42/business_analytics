@@ -40,8 +40,8 @@ services:
        dockerfile: ./ollama.dockerfile
     ports:
       - 11434:11434
-    volumes:
-      - ollama:/root/.ollama
+    #volumes:
+    #  - ollama:/root/.ollama
     tty: true
     restart: unless-stopped
     networks:
@@ -60,8 +60,8 @@ services:
     networks:
       - r_ollama_net
 
-volumes:
-  ollama:
+#volumes:
+#  ollama:
   #open-webui:
 
 networks:
