@@ -25,5 +25,10 @@ auto_fit <- auto_ml() %>%
 
 auto_fit |> autoplot()
 
+library(vip)
+auto_fit |> 
+  extract_fit_parsnip() |> 
+  vip()
+
 h2o_end()
 
