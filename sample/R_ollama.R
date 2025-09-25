@@ -13,3 +13,15 @@ reviews |>
   llm_sentiment(review)
 
 
+# automl
+data(penguins)
+
+h2o_start()
+
+auto_fit <- auto_ml() %>%
+  set_engine("h2o", max_runtime_secs = 60) %>%
+  set_mode("classification") %>%
+  fit(species ~ ., data = penguins)
+
+h2o_end()
+
