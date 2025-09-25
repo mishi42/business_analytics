@@ -23,5 +23,7 @@ auto_fit <- auto_ml() %>%
   set_mode("classification") %>%
   fit(species ~ ., data = penguins)
 
+auto_fit |> autoplot()
+
 h2o_end()
 
