@@ -73,7 +73,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     htmlwidgets gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
-    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc \
+    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor ggeffects \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph explore jtools panelr interactions \
