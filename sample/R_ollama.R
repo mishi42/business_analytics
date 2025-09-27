@@ -32,3 +32,9 @@ auto_fit |>
 
 h2o_end()
 
+### chattr
+library(chattr)
+ellmer::chat_ollama(model = "llama3.2:1b",base_url = "http://ollama:11434") |> 
+  chattr_use()
+
+chattr_app()
