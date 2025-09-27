@@ -22,7 +22,7 @@ RUN apt-get update && \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev \
     sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping \
-    texlive-lang-japanese texlive-fonts-extra texlive-xetex
+    texlive-lang-japanese texlive-fonts-extra texlive-xetex fonts-noto-cjk
     # texlive-full
 
 # DVC
