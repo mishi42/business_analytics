@@ -96,7 +96,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite \
-    semPlot lavaan lme4 mclust doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \
+    semPlot lavaan lme4 lmerTest mclust doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
