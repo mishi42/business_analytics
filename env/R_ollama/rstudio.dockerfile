@@ -103,7 +103,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
-    DALEX tidytreatment Amelia MatchIt grf fwildclusterboot survey rbounds \
+    DALEX tidytreatment Amelia MatchIt grf fwildclusterboot survey rbounds randomForestExplainer \
     bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
     ssgraph huge BayesianGLasso BayesianLasso \
     imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
