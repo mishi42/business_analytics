@@ -97,12 +97,14 @@ RUN install2.r --error --skipmissing --skipinstalled \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
-    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    fixest \
+    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    
+    fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
     DALEX tidytreatment Amelia MatchIt grf fwildclusterboot survey rbounds \
     bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
+    ssgraph huge BayesianGLasso BayesianLasso \
     imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp \
     counterfactuals iml JointAI \
     Rdimtools \
