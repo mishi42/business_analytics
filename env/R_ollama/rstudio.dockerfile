@@ -17,7 +17,7 @@ RUN apt-get update && \
     apt-get install -y \
     fonts-ipaexfont fonts-noto-cjk pandoc \
     mecab libmecab-dev mecab-ipadic mecab-ipadic-utf8 \
-    libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev \
+    libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev \
     # mecab-ipadic-utf8 \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
@@ -123,6 +123,10 @@ RUN install2.r --error --skipmissing --skipinstalled \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt
 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
+
+RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
+             devtools::install_github("quanteda/quanteda.tidy"); \
+             pak::pak("quanteda/quanteda.llm");' 
 
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
