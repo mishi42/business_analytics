@@ -120,7 +120,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     cronR drat OpenCL spatialsample \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
-    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools
+    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt
 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
