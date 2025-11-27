@@ -84,7 +84,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML \
     tidylog \
-    rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod \
+    rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior \
     BMA loo \
     zipangu \
