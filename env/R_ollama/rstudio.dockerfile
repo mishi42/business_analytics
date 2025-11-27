@@ -77,7 +77,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor ggeffects \
-    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph explore jtools panelr interactions \
+    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph qgraph explore jtools panelr interactions \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
@@ -96,8 +96,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite \
-    semPlot lavaan lme4 lmerTest mclust doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \
-    fixest \
+    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
+    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
@@ -114,7 +114,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tableone \
     latex2exp distill \
     equatiomatic ftExtra minidown \
-    polite targets \
+    polite selenium targets \
     cronR drat \
     OpenCL spatialsample \
     progress sen2r miniCRAN \
