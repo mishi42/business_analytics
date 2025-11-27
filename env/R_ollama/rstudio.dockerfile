@@ -92,12 +92,13 @@ RUN install2.r --error --skipmissing --skipinstalled \
     rvest RSelenium \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
-    modelsummary skimr catdap stacks bonsai glmnet vars rBaysianOptimization \
+    modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    
+    copula evd extRemes bayescopulareg \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
@@ -105,11 +106,10 @@ RUN install2.r --error --skipmissing --skipinstalled \
     DALEX tidytreatment Amelia MatchIt grf fwildclusterboot survey rbounds \
     bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
     ssgraph huge BayesianGLasso BayesianLasso \
-    imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp \
-    counterfactuals iml JointAI \
+    imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA \
-    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo \
+    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph \
     tidytext \
     tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods \
     quanteda widyr \
@@ -117,12 +117,10 @@ RUN install2.r --error --skipmissing --skipinstalled \
     latex2exp distill \
     equatiomatic ftExtra minidown \
     polite selenium targets \
-    cronR drat \
-    OpenCL spatialsample \
-    progress sen2r miniCRAN \
-    languageserver here janitor \
+    cronR drat OpenCL spatialsample \
+    progress sen2r miniCRAN languageserver here janitor \
     ellmer \
-    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall
+    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools
 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
