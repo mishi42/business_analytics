@@ -16,7 +16,7 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 RUN apt-get update && \
     apt-get install -y \
     fonts-ipaexfont fonts-noto-cjk pandoc \
-    mecab libmecab-dev mecab-ipadic \
+    mecab libmecab-dev mecab-ipadic mecab-ipadic-utf8 \
     libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev \
     # mecab-ipadic-utf8 \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
