@@ -1,8 +1,7 @@
-version: "3.7"
 services:
   rstudio:
     #image: rocker/tidyverse
-    container_name: rstudio
+    container_name: rstudio_llm
     build :
        context: .
        dockerfile: ./rstudio.dockerfile
@@ -10,60 +9,73 @@ services:
       - USERNAME=rstudio
       - PASSWORD=rstudio1234
       - TZ=Asia/Tokyo
+      - MLFLOW_TRACKING_URI='http://mlflow:5000'
     ports:
       - 8787:8787
       - 3838:3838
-      - 9901:9901
-      - 9902:9902
-      - 9903:9903
-      - 9904:9904
-      - 9905:9905
-      - 9906:9906
-      - 9907:9907
-      - 9908:9908
-      
+      - 9991:9991
+      - 9992:9992
+      - 9993:9993
+      - 9994:9994
+      - 9995:9995
     volumes:
-      - ./mnt:/mnt
+      - ../../work/:/mnt
     #working_dir: /work
     tty: true
-    restart: always
+    restart: always      
     depends_on:
       - ollama
+      - mlflow
     networks:
       - r_ollama_net
 
   ollama:
-    #image: ollama/ollama
+    # image: ollama/ollama
     container_name: ollama
     build :
        context: .
        dockerfile: ./ollama.dockerfile
+    volumes:
+      - ollama:/root/.ollama
     ports:
       - 11434:11434
-    #volumes:
-    #  - ollama:/root/.ollama
     tty: true
     restart: unless-stopped
     networks:
       - r_ollama_net
 
+  mlflow:
+    build:
+      #context: ./mlflow-tracking
+      context: . 
+      dockerfile: ./mlflow.dockerfile
+    expose:
+      - "5000"
+    ports:
+      - 5000:5000
+    command: mlflow server --backend-store-uri /work/mlruns --default-artifact-root /work/mlruns --host 0.0.0.0 --port 5000
+    tty: true
+    restart: always
+    networks:
+      - r_ollama_net
+    
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
-    container_name: open-webui
+    container_name: open_webui
     ports:
-      - 3000:8080
-    #volumes:
-    #  - open-webui:/app/backend/data
+      - "3000:8080"
+    volumes:
+      - open-webui:/app/backend/data
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: always
     networks:
       - r_ollama_net
 
-#volumes:
-#  ollama:
-  #open-webui:
-
 networks:
   r_ollama_net:
     driver: bridge
+
+volumes:
+  ollama:
+  open-webui:
