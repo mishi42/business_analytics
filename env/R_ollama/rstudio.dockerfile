@@ -45,12 +45,20 @@ RUN R -q -e 'install.packages("devtools"); \
 RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("m-clark/mixedup"); \
              #remotes::install_github("nx10/httpgd"); \
-             #devtools::install_github("ebenmichael/augsynth"); \
+             devtools::install_github("ebenmichael/augsynth"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              devtools::install_github("lchiffon/wordcloud2"); \
              remotes::install_github("uribo/jpndistrict"); \
              devtools::install_github("jacob-long/dpm"); \
-             pak::pak("mlverse/lang");'
+             devtools::install_github("soerenkuenzel/causalToolbox"); \
+             devtools::install_github("susanathey/causalTree"); \
+             devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
+             pak::pak("mlverse/lang"); \
+             install.packages("Robyn"); \
+             install.packages("reticulate"); \ 
+             reticulate::install_python(version = "3.12"); \
+             reticulate::virtualenv_create("r-reticulate"); \
+             reticulate::py_install("nevergrad", pip = TRUE);'
              #devtools::install_github("frankiethull/kuzco"); \
              #remotes::install_github("bgreenwell/statlingua"); \
              #remotes::install_github("anna-neufeld/treevalues");\
@@ -60,10 +68,6 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("mlr-org/mlr3automl"); \
              #remotes::install_github("mlr-org/mlr3viz");' 
 
-             #install.packages("reticulate"); \ 
-             #reticulate::install_python(version = "3.12"); \
-             #reticulate::virtualenv_create("r-reticulate"); \
-             #reticulate::py_install("nevergrad", pip = TRUE); \
 
 
 RUN install2.r --error --skipmissing --skipinstalled \
@@ -84,31 +88,29 @@ RUN install2.r --error --skipmissing --skipinstalled \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML \
     tidylog \
-    rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite \
-    tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior dapper cat bcf \
-    BMA loo \
+    rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
+    tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior dapper cat bcf BMA loo \
     zipangu \
     jpmesh kuniezu \
-    rvest RSelenium \
+    rvest RSelenium selenium \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    
-    copula evd extRemes bayescopulareg \
+    copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm \
     sampleSelection \
-    CausalImpact rdd rdrobust rddensity RDHonest DoubleML \
+    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     DALEX tidytreatment Amelia MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
-    bnlearn pcalg censReg bartCause iml shapviz finalfit mice simputation Matching \
-    ssgraph huge BayesianGLasso BayesianLasso \
-    imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
+    bnlearn pcalg censReg bartCause iml shapviz finalfit mice BaylorEdPsych simputation Matching cobalt WeightIt \
+    ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
     Rdimtools \
-    VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA \
+    VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph \
     tidytext \
     tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr \
@@ -126,7 +128,9 @@ RUN install2.r --error --skipmissing --skipinstalled \
 
 RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              devtools::install_github("quanteda/quanteda.tidy"); \
-             pak::pak("quanteda/quanteda.llm");' 
+             pak::pak("quanteda/quanteda.llm"); \
+             spacyr::spacy_install(lang_models = "ja_core_news_sm");'
+             #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
@@ -172,12 +176,13 @@ RUN sudo adduser user01 --disabled-password --gecos "" && \
 #RUN sudo ./R_library.sh
 
 #catdap2ext
-#RUN mkdir /work/catdap
-#WORKDIR /work/catdap
+RUN mkdir /work/catdap
+WORKDIR /work/catdap
 
-#RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
-#    R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
-#WORKDIR /work/catdap
+RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
+    R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
 
-#RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
-#    R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
+
+
+
+
