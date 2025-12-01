@@ -96,7 +96,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
@@ -111,7 +111,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
-    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph \
+    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
     tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr \
     quanteda widyr \
