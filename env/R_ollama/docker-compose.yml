@@ -31,7 +31,7 @@ services:
 
   ollama:
     # image: ollama/ollama
-    container_name: ollama
+    container_name: rstudio_ollama
     build :
        context: .
        dockerfile: ./ollama.dockerfile
@@ -46,6 +46,7 @@ services:
 
   mlflow:
     build:
+      ontainer_name: rstudio_mlflow
       #context: ./mlflow-tracking
       context: . 
       dockerfile: ./mlflow.dockerfile
@@ -60,8 +61,8 @@ services:
       - r_ollama_net
     
   open-webui:
+    container_name: rstudio_weubui
     image: ghcr.io/open-webui/open-webui:main
-    container_name: open_webui
     ports:
       - "3000:8080"
     volumes:
@@ -74,7 +75,7 @@ services:
 
 
   selenium:
-    container_name: selenium
+    container_name: rstudio_selenium
     build :
        context: .
        dockerfile: ./selenium.dockerfile
