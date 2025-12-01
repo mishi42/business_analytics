@@ -17,7 +17,7 @@ RUN apt-get update && \
     apt-get install -y \
     fonts-ipaexfont fonts-noto-cjk pandoc \
     mecab libmecab-dev mecab-ipadic mecab-ipadic-utf8 \
-    libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev \
+    libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev libgsl0-dev \
     # mecab-ipadic-utf8 \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
