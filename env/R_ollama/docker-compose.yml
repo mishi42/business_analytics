@@ -72,6 +72,20 @@ services:
     networks:
       - r_ollama_net
 
+
+  selenium:
+    container_name: selenium
+    build :
+       context: .
+       dockerfile: ./selenium.dockerfile
+    ports:
+      - 4444:4444 
+      - 7900:7900
+    restart: always
+    tty: true
+    networks:
+      - r_ollama_net
+
 networks:
   r_ollama_net:
     driver: bridge
