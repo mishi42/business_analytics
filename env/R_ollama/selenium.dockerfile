@@ -16,5 +16,4 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # 日本語フォントのインストール 
 RUN apt-get update && \
-    apt-get install -y \
-    apt-get install fonts-ipaexfont-gothic fonts-ipaexfont-mincho
+    apt-get install -y fonts-ipaexfont-gothic fonts-ipaexfont-mincho
