@@ -96,7 +96,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant marketr \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
