@@ -107,7 +107,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
-    seqHMM superheat depmixS4 \
+    seqHMM superheat depmixS4 edeaR \
     DALEX tidytreatment Amelia MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
     bnlearn pcalg censReg bartCause iml shapviz finalfit mice BaylorEdPsych simputation Matching cobalt WeightIt \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
