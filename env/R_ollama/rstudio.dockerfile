@@ -117,7 +117,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
-    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text talk \
+    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece \
     quanteda widyr \
     tableone \
     latex2exp distill \
@@ -146,6 +146,11 @@ RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              textrpp_install(); \
              textrpp_initialize(save_profile = TRUE); '
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
+
+RUN mkdir /work/model_pretrained/
+WORKDIR /work/model_pretrained/
+
+RUN R -q -e 'sentencepiece::sentencepiece_download_model("Japanese", vocab_size = 200000,model = "/work/model_pretrained/")'
 
 # NEologd
 RUN mkdir /tmp
