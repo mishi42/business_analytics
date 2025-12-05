@@ -67,7 +67,10 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("mlr-org/mlr3automl"); \
              #remotes::install_github("mlr-org/mlr3viz");' 
 
-
+# venv を作る
+RUN python3 -m venv /opt/pyenv
+ENV RETICULATE_PYTHON=/opt/pyenv/bin/python
+ENV PATH="/opt/pyenv/bin:${PATH}"
 
 RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
