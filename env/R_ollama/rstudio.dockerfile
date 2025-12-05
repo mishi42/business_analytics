@@ -21,7 +21,8 @@ RUN apt-get update && \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev \
-    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch
+    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch \
+    python3.12 python3.12-venv　python3.12-dev python3.12-distutils
     # texlive-full
 
 # DVC
@@ -54,10 +55,10 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
              pak::pak("mlverse/lang"); \
              install.packages("Robyn"); \
-             install.packages("reticulate"); \ 
-             reticulate::install_python(version = "3.12"); \
-             reticulate::virtualenv_create("r-reticulate"); \
-             reticulate::py_install("nevergrad", pip = TRUE);'
+             install.packages("reticulate");' 
+             #reticulate::install_python(version = "3.12"); \
+             #reticulate::virtualenv_create("r-reticulate"); \
+             #reticulate::py_install("nevergrad", pip = TRUE);'
              #devtools::install_github("frankiethull/kuzco"); \
              #remotes::install_github("bgreenwell/statlingua"); \
              #remotes::install_github("anna-neufeld/treevalues");\
@@ -127,6 +128,10 @@ RUN install2.r --error --skipmissing --skipinstalled \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt
+
+RUN /opt/pyenv/bin/pip install --upgrade pip && \
+    /opt/pyenv/bin/pip install \
+        nevergrad torch 
 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
