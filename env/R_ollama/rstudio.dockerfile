@@ -91,7 +91,6 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior dapper cat bcf BMA loo \
     zipangu \
     jpmesh kuniezu \
-    rvest RSelenium selenium \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization \
@@ -106,20 +105,21 @@ RUN install2.r --error --skipmissing --skipinstalled \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
-    seqHMM superheat depmixS4 edeaR stagedtrees　\
+    seqHMM superheat depmixS4 edeaR stagedtrees \
     DALEX tidytreatment Amelia MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
-    bnlearn pcalg censReg bartCause iml shapviz finalfit mice BaylorEdPsych simputation Matching cobalt WeightIt \
+    bnlearn pcalg censReg bartCause iml shapviz finalfit mice BaylorEdPsych simputation Matching cobalt WeightIt VIM \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
-    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr \
+    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text topics talk \
     quanteda widyr \
     tableone \
     latex2exp distill \
     equatiomatic ftExtra minidown \
-    polite selenium targets wdman \
+    rvest \
+    polite selenium targets wdman RSelenium \
     cronR drat OpenCL spatialsample \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
