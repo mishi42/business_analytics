@@ -117,7 +117,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
-    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece \
+    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece tokenizers.bpe SnowballC \
     quanteda widyr \
     tableone \
     latex2exp distill \
