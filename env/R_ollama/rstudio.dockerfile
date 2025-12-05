@@ -21,7 +21,7 @@ RUN apt-get update && \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev \
-    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch
+    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git
 
 RUN apt-get install -y python3.12 python3.12-venv python3.12-dev
     # texlive-full
@@ -216,7 +216,6 @@ WORKDIR /work/catdap
 
 RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
     R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
-
 
 
 
