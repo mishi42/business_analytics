@@ -18,11 +18,10 @@ RUN apt-get update && \
     fonts-ipaexfont fonts-noto-cjk pandoc \
     mecab libmecab-dev mecab-ipadic mecab-ipadic-utf8 \
     libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev libgsl0-dev \
-    # mecab-ipadic-utf8 \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev \
-    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping 
+    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch
     # texlive-full
 
 # DVC
@@ -133,6 +132,19 @@ RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              pak::pak("quanteda/quanteda.llm"); \
              spacyr::spacy_install(lang_models = "ja_core_news_sm");'
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
+
+
+# NEologd
+RUN mkdir /tmp
+RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git /tmp/mecab-ipadic-neologd
+
+RUN cd /tmp/mecab-ipadic-neologd && \
+    sed -i 's/sudo //g' ./bin/install-mecab-ipadic-neologd && \
+    yes yes | /bin/bash ./bin/install-mecab-ipadic-neologd -n -y && \
+    rm -rf /tmp/mecab-ipadic-neologd
+
+# NEologd を既定辞書にする
+RUN echo "$(mecab-config --dicdir)/mecab-ipadic-neologd" > /etc/mecabrc
 
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
