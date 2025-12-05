@@ -117,7 +117,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
-    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text topics talk \
+    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text talk \
     quanteda widyr \
     tableone \
     latex2exp distill \
@@ -131,16 +131,21 @@ RUN install2.r --error --skipmissing --skipinstalled \
 
 RUN /opt/pyenv/bin/pip install --upgrade pip && \
     /opt/pyenv/bin/pip install \
-        nevergrad torch 
+        nevergrad torch numpy
 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
 RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              devtools::install_github("quanteda/quanteda.tidy"); \
              pak::pak("quanteda/quanteda.llm"); \
-             spacyr::spacy_install(lang_models = "ja_core_news_sm");'
+             spacyr::spacy_install(lang_models = "ja_core_news_sm"); \
+             devtools::install_github("theharmonylab/topics"); \
+             devtools::install_github("theharmonylab/talk"); \
+             talkrpp_install(); \
+             talkrpp_initialize(save_profile = TRUE); \
+             textrpp_install(); \
+             textrpp_initialize(save_profile = TRUE); '
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
-
 
 # NEologd
 RUN mkdir /tmp
@@ -162,7 +167,7 @@ RUN apt-get install -y libtesseract-dev libleptonica-dev tesseract-ocr-eng && \
     apt-get install -y tesseract-ocr-jpn 
 
 RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
-RUN R -q -e 'sparklyr::spark_install();'
+#RUN R -q -e 'sparklyr::spark_install();'
 
 
 #radiant
