@@ -83,8 +83,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     dbplyr \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL \
     ggh4x \
-    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor ggeffects ggdendro \
-    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph qgraph explore jtools panelr interactions \
+    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro \
+    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph qgraph explore jtools panelr interactions tidygraph \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
@@ -98,27 +98,29 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
-    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm  marketr CLVTools \
+    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm  marketr CLVTools ChannelAttribution \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
-    seqHMM superheat depmixS4 edeaR stagedtrees \
-    DALEX tidytreatment Amelia MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
-    bnlearn pcalg censReg bartCause iml shapviz finalfit mice BaylorEdPsych simputation Matching cobalt WeightIt VIM \
+    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw \
+    DALEX tidytreatment  MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
+    bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt \
+    mice \
+    Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
-    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece tokenizers.bpe SnowballC stm \
-    stopwords doc2vec word2vec udpipe Ruchardet quanteda widyr quanteda.textplots \
+    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece tokenizers.bpe SnowballC stm tokenizers \
+    stopwords doc2vec word2vec udpipe Ruchardet quanteda widyr quanteda.textplots textclean syuzhet \
     tableone \
     latex2exp distill equatiomatic ftExtra minidown \
     rvest \
@@ -130,7 +132,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
 
 RUN /opt/pyenv/bin/pip install --upgrade pip && \
     /opt/pyenv/bin/pip install \
-        nevergrad torch numpy
+        nevergrad torch numpy sentencepiece youtokentome transformers scikit-learn
 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
@@ -140,9 +142,9 @@ RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              spacyr::spacy_install(lang_models = "ja_core_news_sm"); \
              devtools::install_github("theharmonylab/topics"); \
              devtools::install_github("theharmonylab/talk"); \
-             talkrpp_install(); \
+             #talkrpp_install(prompt = FALSE); \
              talkrpp_initialize(save_profile = TRUE); \
-             textrpp_install(); \
+             #textrpp_install(prompt = FALSE); \
              textrpp_initialize(save_profile = TRUE); '
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
