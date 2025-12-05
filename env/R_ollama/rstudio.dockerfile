@@ -53,6 +53,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("soerenkuenzel/causalToolbox"); \
              devtools::install_github("susanathey/causalTree"); \
              devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
+             devtools::install_github("davidsjoberg/ggsankey"); \
              pak::pak("mlverse/lang"); \
              install.packages("Robyn"); \
              install.packages("reticulate");' 
@@ -83,7 +84,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     dbplyr \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL \
     ggh4x \
-    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro \
+    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph qgraph explore jtools panelr interactions tidygraph \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
