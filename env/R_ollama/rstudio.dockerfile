@@ -83,7 +83,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     dbplyr \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL \
     ggh4x \
-    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor ggeffects \
+    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial naniar janitor ggeffects ggdendro \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph qgraph explore jtools panelr interactions \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
@@ -98,7 +98,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych dirichletprocess statmod embed DPpackage \
     modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant\
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
@@ -117,11 +117,10 @@ RUN install2.r --error --skipmissing --skipinstalled \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
-    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece tokenizers.bpe SnowballC \
-    quanteda widyr \
+    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece tokenizers.bpe SnowballC stm \
+    stopwords doc2vec word2vec udpipe Ruchardet quanteda widyr quanteda.textplots \
     tableone \
-    latex2exp distill \
-    equatiomatic ftExtra minidown \
+    latex2exp distill equatiomatic ftExtra minidown \
     rvest \
     polite selenium targets wdman RSelenium \
     cronR drat OpenCL spatialsample \
