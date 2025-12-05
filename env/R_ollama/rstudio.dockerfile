@@ -21,8 +21,9 @@ RUN apt-get update && \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev \
-    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch \
-    python3.12 python3.12-venv　python3.12-dev python3.12-distutils
+    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch
+
+RUN apt-get install -y python3.12 python3.12-venv python3.12-dev
     # texlive-full
 
 # DVC
@@ -106,11 +107,11 @@ RUN install2.r --error --skipmissing --skipinstalled \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
-    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm  marketr CLVTools ChannelAttribution \
+    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm  marketr CLVTools \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
-    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw \
+    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution \
     DALEX tidytreatment  MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt \
     mice \
@@ -215,7 +216,6 @@ WORKDIR /work/catdap
 
 RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
     R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
-
 
 
 
