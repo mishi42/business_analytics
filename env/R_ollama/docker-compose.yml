@@ -26,12 +26,15 @@ services:
     depends_on:
       - ollama
       - mlflow
+      - selenium
+      - mattermost
+      - db
     networks:
       - r_ollama_net
 
   ollama:
     # image: ollama/ollama
-    container_name: rstudio_ollama
+    container_name: ollama
     build :
        context: .
        dockerfile: ./ollama.dockerfile
@@ -45,8 +48,8 @@ services:
       - r_ollama_net
 
   mlflow:
+    container_name: mlflow
     build:
-      ontainer_name: rstudio_mlflow
       #context: ./mlflow-tracking
       context: . 
       dockerfile: ./mlflow.dockerfile
@@ -60,22 +63,21 @@ services:
     networks:
       - r_ollama_net
     
-  open-webui:
-    container_name: rstudio_weubui
-    image: ghcr.io/open-webui/open-webui:main
-    ports:
-      - "3000:8080"
-    volumes:
-      - open-webui:/app/backend/data
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    restart: always
-    networks:
-      - r_ollama_net
-
+  #open-webui:
+  #  container_name: open_webui
+  #  image: ghcr.io/open-webui/open-webui:main
+  #  ports:
+  #    - "3000:8080"
+  #  volumes:
+  #    - open-webui:/app/backend/data
+  #  extra_hosts:
+  #    - "host.docker.internal:host-gateway"
+  #  restart: always
+  #  networks:
+  #    - r_ollama_net
 
   selenium:
-    container_name: rstudio_selenium
+    container_name: selenium_chrome
     build :
        context: .
        dockerfile: ./selenium.dockerfile
@@ -87,10 +89,42 @@ services:
     networks:
       - r_ollama_net
 
+  mattermost:
+    container_name: mattermost
+    image: mattermost/mattermost-team-edition
+    ports:
+      - 8765:8065 
+    environment:
+      - MM_SQLSETTINGS_DRIVERNAME=postgres
+      - MM_SQLSETTINGS_DATASOURCE=postgres://mmuser:password@db:5432/mattermost?sslmode=disable
+      - TZ=Asia/Tokyo
+    #volumes:
+    #  - ./volumes/app/mattermost/:/mattermost/
+    tty: true
+    restart: unless-stopped
+    depends_on:
+      - db
+    networks:
+      - r_ollama_net
+  db:
+    container_name: postgres
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=mmuser
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=mattermost
+      - TZ=Asia/Tokyo
+    #volumes:
+    #  - ./volumes/db:/var/lib/postgresql/data
+    tty: true
+    restart: unless-stopped
+    networks:
+      - r_ollama_net
+
 networks:
   r_ollama_net:
     driver: bridge
 
 volumes:
   ollama:
-  open-webui:
+  #open-webui:
