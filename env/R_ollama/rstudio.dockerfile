@@ -21,9 +21,9 @@ RUN apt-get update && \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev \
-    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git
+    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git build-essential
 
-RUN apt-get install -y python3.12 python3.12-venv python3.12-dev
+RUN apt-get install -y python3 python3-venv python3-dev python3-pip
     # texlive-full
 
 # DVC
@@ -55,6 +55,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("susanathey/causalTree"); \
              devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
              devtools::install_github("davidsjoberg/ggsankey"); \
+             devtools::install_github("GreenGrassBlueOcean/MattermostR"); \
              pak::pak("mlverse/lang"); \
              install.packages("Robyn"); \
              install.packages("reticulate");' 
@@ -70,16 +71,11 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("mlr-org/mlr3automl"); \
              #remotes::install_github("mlr-org/mlr3viz");' 
 
-# venv を作る
-RUN python3 -m venv /opt/pyenv
-ENV RETICULATE_PYTHON=/opt/pyenv/bin/python
-ENV PATH="/opt/pyenv/bin:${PATH}"
-
 RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles DT reactable \
     knitr kableExtra Hmisc quantreg reporttools NMOF papeR ztable xtable report \
-    sessioninfo quarto flextable htmlTable parameters pander \
+    sessioninfo quarto flextable flexlsx htmlTable parameters pander \
     htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
@@ -98,21 +94,21 @@ RUN install2.r --error --skipmissing --skipinstalled \
     zipangu \
     jpmesh kuniezu \
     corrplot \
-    Rtsne psych dirichletprocess statmod embed DPpackage \
+    Rtsne psych statmod embed \
     modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer gtrendsR \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
-    partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat \
-    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate \
+    partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
+    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
-    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm  marketr CLVTools \
+    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr CLVTools \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
     seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution \
-    DALEX tidytreatment  MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
+    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt \
     mice \
     Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
@@ -121,8 +117,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
-    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece tokenizers.bpe SnowballC stm tokenizers \
-    stopwords doc2vec word2vec udpipe Ruchardet quanteda widyr quanteda.textplots textclean syuzhet \
+    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text sentencepiece tokenizers.bpe SnowballC stm tokenizers fastText \
+    stopwords doc2vec word2vec udpipe Ruchardet quanteda widyr quanteda.textplots textclean syuzhet topicmodels.etm uwot textplot epitools \
     tableone \
     latex2exp distill equatiomatic ftExtra minidown \
     rvest \
@@ -132,22 +128,32 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt
 
-RUN /opt/pyenv/bin/pip install --upgrade pip && \
-    /opt/pyenv/bin/pip install \
-        nevergrad torch numpy sentencepiece youtokentome transformers scikit-learn
+#python関連
+RUN apt-get install -y 
 
+RUN python3 -m venv /opt/reticulate
+ENV RETICULATE_PYTHON=/opt/reticulate/bin/python
+ENV PATH="/opt/reticulate/bin:${PATH}"
+
+RUN /opt/reticulate/bin/pip install --upgrade pip && \
+    /opt/reticulate/bin/pip install \
+        Cython nevergrad numpy sentencepiece transformers scikit-learn
+        #torch
+
+#RUN /opt/reticulate/bin/pip install --no-build-isolation youtokentome 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
-RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
+RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE);\
+             remotes::install_github("quanteda/quanteda.sentiment"); \
              devtools::install_github("quanteda/quanteda.tidy"); \
              pak::pak("quanteda/quanteda.llm"); \
              spacyr::spacy_install(lang_models = "ja_core_news_sm"); \
              devtools::install_github("theharmonylab/topics"); \
-             devtools::install_github("theharmonylab/talk"); \
+             devtools::install_github("theharmonylab/talk");'
              #talkrpp_install(prompt = FALSE); \
-             talkrpp_initialize(save_profile = TRUE); \
+             #talkrpp_initialize(save_profile = TRUE); \
              #textrpp_install(prompt = FALSE); \
-             textrpp_initialize(save_profile = TRUE); '
+             #textrpp_initialize(save_profile = TRUE);
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
 RUN mkdir /work/model_pretrained/
@@ -156,13 +162,13 @@ WORKDIR /work/model_pretrained/
 RUN R -q -e 'sentencepiece::sentencepiece_download_model("Japanese", vocab_size = 200000,model = "/work/model_pretrained/")'
 
 # NEologd
-RUN mkdir /tmp
-RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git /tmp/mecab-ipadic-neologd
+RUN mkdir /work/dic/
+RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git /work/dic/mecab-ipadic-neologd
 
-RUN cd /tmp/mecab-ipadic-neologd && \
+RUN cd  /work/dic/mecab-ipadic-neologd && \
     sed -i 's/sudo //g' ./bin/install-mecab-ipadic-neologd && \
     yes yes | /bin/bash ./bin/install-mecab-ipadic-neologd -n -y && \
-    rm -rf /tmp/mecab-ipadic-neologd
+    rm -rf /work/dic/mecab-ipadic-neologd
 
 # NEologd を既定辞書にする
 RUN echo "$(mecab-config --dicdir)/mecab-ipadic-neologd" > /etc/mecabrc
@@ -170,13 +176,11 @@ RUN echo "$(mecab-config --dicdir)/mecab-ipadic-neologd" > /etc/mecabrc
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
 
-
 RUN apt-get install -y libtesseract-dev libleptonica-dev tesseract-ocr-eng && \
     apt-get install -y tesseract-ocr-jpn 
 
 RUN R -q -e 'tesseract::tesseract_download(lang = "jpn");'
 #RUN R -q -e 'sparklyr::spark_install();'
-
 
 #radiant
 RUN R -q -e 'install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/"); \
@@ -216,6 +220,4 @@ WORKDIR /work/catdap
 
 RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
     R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
-
-
 
