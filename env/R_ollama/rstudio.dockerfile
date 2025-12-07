@@ -46,7 +46,6 @@ RUN R -q -e 'install.packages("devtools"); \
 RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("m-clark/mixedup"); \
              #remotes::install_github("nx10/httpgd"); \
-             remotes::install_github("gaborcsardi/notifier"); \
              devtools::install_github("ebenmichael/augsynth"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              devtools::install_github("lchiffon/wordcloud2"); \
