@@ -15,7 +15,7 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 # 日本語フォントのインストール 
 RUN apt-get update && \
     apt-get install -y \
-    fonts-ipaexfont fonts-noto-cjk pandoc \
+    fonts-ipaexfont fonts-noto-cjk pandoc libnotify-bin \
     mecab libmecab-dev mecab-ipadic mecab-ipadic-utf8 \
     libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev libgsl0-dev \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
@@ -46,6 +46,7 @@ RUN R -q -e 'install.packages("devtools"); \
 RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("m-clark/mixedup"); \
              #remotes::install_github("nx10/httpgd"); \
+             install.packages("https://cran.r-project.org/src/contrib/Archive/notifier/notifier_1.0.0.tar.gz"); \
              devtools::install_github("ebenmichael/augsynth"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              devtools::install_github("lchiffon/wordcloud2"); \
@@ -220,4 +221,3 @@ WORKDIR /work/catdap
 
 RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
     R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
-
