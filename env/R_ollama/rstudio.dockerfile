@@ -15,7 +15,7 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 # 日本語フォントのインストール 
 RUN apt-get update && \
     apt-get install -y \
-    fonts-ipaexfont fonts-noto-cjk pandoc libnotify-bin libnotify \
+    fonts-ipaexfont fonts-noto-cjk pandoc libnotify-bin \
     mecab libmecab-dev mecab-ipadic mecab-ipadic-utf8 \
     libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev libgsl0-dev \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
