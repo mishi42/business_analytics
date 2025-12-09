@@ -171,9 +171,6 @@ RUN cd  /work/dic/mecab-ipadic-neologd && \
     yes yes | /bin/bash ./bin/install-mecab-ipadic-neologd -n -y && \
     rm -rf /work/dic/mecab-ipadic-neologd
 
-# NEologd を既定辞書にする
-RUN echo "$(mecab-config --dicdir)/mecab-ipadic-neologd" > /etc/mecabrc
-
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
 
