@@ -121,6 +121,18 @@ services:
     networks:
       - r_ollama_net
 
+  portainer:
+    image: portainer/portainer-ce:alpine
+    container_name: portainer
+    ports:
+      - 9443:9443
+      - 9000:9000
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - r_ollama_net
+
 networks:
   r_ollama_net:
     driver: bridge
