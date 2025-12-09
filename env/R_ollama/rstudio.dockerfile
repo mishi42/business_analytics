@@ -166,10 +166,8 @@ RUN R -q -e 'sentencepiece::sentencepiece_download_model("Japanese", vocab_size 
 RUN mkdir /work/dic/
 RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git /work/dic/mecab-ipadic-neologd
 
-RUN cd  /work/dic/mecab-ipadic-neologd && \
-    sed -i 's/sudo //g' ./bin/install-mecab-ipadic-neologd && \
-    yes yes | /bin/bash ./bin/install-mecab-ipadic-neologd -n -y && \
-    rm -rf /work/dic/mecab-ipadic-neologd
+RUN touch ~/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > ~/.mecabrc
 
 ##download.file(url = "https://github.com/tesseract-##ocr/tessdata/raw/4.00/jpn.traineddata",
 ##              destfile = paste0(TessRact$datapath, "/jpn.traineddata"))
@@ -187,20 +185,36 @@ RUN R -q -e 'install.packages("radiant", repos = "https://radiant-rstats.github.
 # add user
 RUN sudo adduser user01 --disabled-password --gecos "" && \
     sudo echo user01:'user01' | /usr/sbin/chpasswd && \
+    touch /home/user01/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user01/.mecabrc && \
     sudo adduser user02 --disabled-password --gecos "" && \
     sudo echo user02:'user02' | /usr/sbin/chpasswd && \
+    touch /home/user02/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user02/.mecabrc && \
     sudo adduser user03 --disabled-password --gecos "" && \
     sudo echo user03:'user03' | /usr/sbin/chpasswd && \
+    touch /home/user03/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user03/.mecabrc && \
     sudo adduser user04 --disabled-password --gecos "" && \
     sudo echo user04:'user04' | /usr/sbin/chpasswd && \
+    touch /home/user04/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user04/.mecabrc && \
     sudo adduser user05 --disabled-password --gecos "" && \
     sudo echo user05:'user05' | /usr/sbin/chpasswd && \
+    touch /home/user05/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user05/.mecabrc && \
     sudo adduser user06 --disabled-password --gecos "" && \
     sudo echo user06:'user06' | /usr/sbin/chpasswd && \
+    touch /home/user06/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user06/.mecabrc && \
     sudo adduser user07 --disabled-password --gecos "" && \
     sudo echo user07:'user07' | /usr/sbin/chpasswd && \
+    touch /home/user07/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user07/.mecabrc && \
     sudo adduser user08 --disabled-password --gecos "" && \
-    sudo echo user08:'user08' | /usr/sbin/chpasswd
+    sudo echo user08:'user08' | /usr/sbin/chpasswd && \
+    touch /home/user08/.mecabrc && \
+    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user08/.mecabrc
 
 #RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' > ~/.Rprofile && \
 #         'options(.lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >>  ~/.Rprofile  
