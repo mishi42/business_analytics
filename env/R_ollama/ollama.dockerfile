@@ -18,4 +18,5 @@ RUN ollama serve & \
     ollama pull gemma3:4b && \
     ollama pull snowflake-arctic-embed2:568m-l-fp16 && \
     ollama pull qwen2.5-coder:1.5b && \
+    ollama pull gpt-oss:20b && \
     pkill ollama
