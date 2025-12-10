@@ -158,6 +158,10 @@ RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRU
              #textrpp_initialize(save_profile = TRUE);
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
+RUN R -q -e 'rdevtools::install_github("farach/huggingfaceR"); \
+             huggingfaceR::hf_python_depends(); \
+             ' 
+
 RUN mkdir /work/model_pretrained/
 WORKDIR /work/model_pretrained/
 
