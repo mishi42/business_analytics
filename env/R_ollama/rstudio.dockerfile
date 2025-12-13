@@ -83,10 +83,12 @@ RUN install2.r --error --skipmissing --skipinstalled \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial \
-    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice GWalkR rgl pdftools igraph qgraph explore jtools panelr interactions tidygraph \
+    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice rgl pdftools igraph qgraph jtools panelr interactions tidygraph \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
+    dataMaid \
+    dlookr GWalkR explore DataExplorer modelsummary skimr summarytools \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML \
     tidylog \
@@ -96,10 +98,10 @@ RUN install2.r --error --skipmissing --skipinstalled \
     jpmesh kuniezu \
     corrplot \
     Rtsne psych statmod embed XICOR \
-    modelsummary skimr catdap stacks bonsai glmnet vars rBayesianOptimization modeltime \
+    catdap stacks bonsai glmnet vars rBayesianOptimization modeltime \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer gtrendsR \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
-    partykit rpart.plot earth DataExplorer BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
+    partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
