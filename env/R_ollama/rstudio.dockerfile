@@ -35,7 +35,7 @@ RUN wget https://dvc.org/deb/dvc.list -O /etc/apt/sources.list.d/dvc.list && \
 RUN mkdir /work && \
     mkdir /work/env/
 #japanese font
-RUN install2.r --error --skipmissing --skipinstalled extrafont remotes showtext sysfonts tinytex
+RUN install2.r --error --skipmissing --skipinstalled extrafont remotes showtext sysfonts tinytex BiocManager
 #RUN R -q -e 'extrafont::font_import(prompt = FALSE); \
 RUN R -q -e 'install.packages("devtools"); \
              install.packages("pak"); \ 
@@ -57,6 +57,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
              devtools::install_github("davidsjoberg/ggsankey"); \
              devtools::install_github("GreenGrassBlueOcean/MattermostR"); \
+             BiocManager::install("Rgraphviz"); \
              pak::pak("mlverse/lang"); \
              install.packages("Robyn"); \
              install.packages("reticulate");' 
