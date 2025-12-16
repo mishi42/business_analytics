@@ -89,7 +89,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
     dataMaid \
-    dlookr GWalkR explore DataExplorer modelsummary skimr summarytools \
+    dlookr GWalkR explore DataExplorer modelsummary skimr summarytools dataMaid dlookr \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML \
     tidylog \
@@ -103,23 +103,23 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer gtrendsR \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
-    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity \
-    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \    
+    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette pricesensitivitymeter sjPlot \
+    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \ 
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
-    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr ¥
+    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster \
     CLVTools bayesQR quantreg rqPen tvReg \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
     seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution \
     DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
-    bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt \
+    bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr \
     mice \
     Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
     Rdimtools \
-    VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl \
+    VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
     tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl \
