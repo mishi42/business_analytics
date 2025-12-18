@@ -89,8 +89,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
-    dataMaid \
-    dlookr GWalkR explore DataExplorer modelsummary skimr summarytools dataMaid dlookr \
+    summarytools \
+    dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML \
     tidylog \
