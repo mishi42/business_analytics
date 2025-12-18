@@ -58,6 +58,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("davidsjoberg/ggsankey"); \
              devtools::install_github("GreenGrassBlueOcean/MattermostR"); \
              BiocManager::install("Rgraphviz"); \
+             devtools::install_github("frankiethull/kuzco"); \
              pak::pak("mlverse/lang"); \
              install.packages("Robyn"); \
              install.packages("reticulate");' 
