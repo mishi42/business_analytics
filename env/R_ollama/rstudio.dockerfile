@@ -113,7 +113,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
-    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney　\
+    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney \
     DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr \
     mice \
@@ -121,7 +121,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful \
-    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
+    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR rattle \
     tidytext \
     tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT \
     sentencepiece tokenizers.bpe SnowballC stm tokenizers fastText \
