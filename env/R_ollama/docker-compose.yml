@@ -22,7 +22,11 @@ services:
       - ../../work/:/mnt
     #working_dir: /work
     tty: true
-    restart: always      
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: '50g'
     depends_on:
       - ollama
       - mlflow
@@ -44,6 +48,10 @@ services:
       - 11434:11434
     tty: true
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: '20g'
     networks:
       - r_ollama_net
 
@@ -60,6 +68,10 @@ services:
     command: mlflow server --backend-store-uri /work/mlruns --default-artifact-root /work/mlruns --host 0.0.0.0 --port 5000
     tty: true
     restart: always
+    deploy:
+      resources:
+        limits:
+          memory: '2g'
     networks:
       - r_ollama_net
     
@@ -86,6 +98,10 @@ services:
       - 7900:7900
     restart: always
     tty: true
+    deploy:
+      resources:
+        limits:
+          memory: '2g'
     networks:
       - r_ollama_net
 
@@ -102,10 +118,15 @@ services:
     #  - ./volumes/app/mattermost/:/mattermost/
     tty: true
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: '2g'
     depends_on:
       - db
     networks:
       - r_ollama_net
+      
   db:
     container_name: postgres
     image: postgres:16-alpine
@@ -118,6 +139,10 @@ services:
     #  - ./volumes/db:/var/lib/postgresql/data
     tty: true
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: '2g'
     networks:
       - r_ollama_net
 
@@ -128,6 +153,10 @@ services:
       - 9443:9443
       - 9000:9000
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: '2g'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
