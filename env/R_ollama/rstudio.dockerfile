@@ -143,9 +143,9 @@ ENV RETICULATE_PYTHON=/opt/reticulate/bin/python
 ENV PATH="/opt/reticulate/bin:${PATH}"
 
 RUN /opt/reticulate/bin/pip install --upgrade pip && \
-    /opt/reticulate/bin/pip install \
+    /opt/reticulate/bin/pip install --no-cache-dir \
         Cython nevergrad numpy sentencepiece transformers scikit-learn
-        #torch
+        torch
 
 #RUN /opt/reticulate/bin/pip install --no-build-isolation youtokentome 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
