@@ -144,7 +144,7 @@ ENV PATH="/opt/reticulate/bin:${PATH}"
 
 RUN /opt/reticulate/bin/pip install --upgrade pip && \
     /opt/reticulate/bin/pip install --no-cache-dir \
-        Cython nevergrad numpy sentencepiece transformers scikit-learn
+        Cython nevergrad numpy sentencepiece transformers scikit-learn \
         torch
 
 #RUN /opt/reticulate/bin/pip install --no-build-isolation youtokentome 
