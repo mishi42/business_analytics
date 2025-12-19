@@ -90,7 +90,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
     summarytools \
-    dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr \
+    dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML \
     tidylog \
@@ -121,7 +121,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml JointAI \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful \
-    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR rattle \
+    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
     tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT \
     sentencepiece tokenizers.bpe SnowballC stm tokenizers fastText \
