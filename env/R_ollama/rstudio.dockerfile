@@ -135,7 +135,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     cronR drat OpenCL spatialsample \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
-    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt
+    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt myownrobs
 
 #python関連
 RUN apt-get install -y 
