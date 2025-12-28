@@ -76,6 +76,10 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("mlr-org/mlr3automl"); \
              #remotes::install_github("mlr-org/mlr3viz");' 
 
+
+RUN  R -q -e 'data_server.py <- system.file("mcp", "data_server.py",package = "wizrd"); \
+              server <- start_mcp(data_server.py);'
+
 RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles DT reactable \
