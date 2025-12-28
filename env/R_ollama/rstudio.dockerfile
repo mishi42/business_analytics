@@ -50,7 +50,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("ebenmichael/augsynth"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              remotes::install_github("lawremi/wizrd"); \
-             remotes::install_github("lawremi/wizrd"); \
+             pak::pkg_install("devOpifex/mcpr"); \
              devtools::install_github("lchiffon/wordcloud2"); \
              remotes::install_github("uribo/jpndistrict"); \
              devtools::install_github("jacob-long/dpm"); \
