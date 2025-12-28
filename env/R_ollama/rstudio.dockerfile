@@ -49,6 +49,8 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              install.packages("https://cran.r-project.org/src/contrib/Archive/notifier/notifier_1.0.0.tar.gz"); \
              devtools::install_github("ebenmichael/augsynth"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
+             remotes::install_github("lawremi/wizrd"); \
+             remotes::install_github("lawremi/wizrd"); \
              devtools::install_github("lchiffon/wordcloud2"); \
              remotes::install_github("uribo/jpndistrict"); \
              devtools::install_github("jacob-long/dpm"); \
