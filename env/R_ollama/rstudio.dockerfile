@@ -101,7 +101,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych statmod embed XICOR \
     catdap stacks bonsai glmnet vars rBayesianOptimization modeltime \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer gtrendsR \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer gtrendsR rattle \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette pricesensitivitymeter sjPlot \
