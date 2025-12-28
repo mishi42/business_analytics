@@ -20,7 +20,7 @@ RUN apt-get update && \
     libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev libgsl0-dev \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
-    libboost-filesystem-dev \
+    libboost-filesystem-dev libudunits2-dev \
     sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git build-essential
 
 RUN apt-get install -y python3 python3-venv python3-dev python3-pip
@@ -106,7 +106,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     jpmesh kuniezu \
     corrplot \
     Rtsne psych statmod embed XICOR \
-    catdap stacks bonsai glmnet vars rBayesianOptimization modeltime \
+    catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer gtrendsR rattle \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
