@@ -129,8 +129,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
     tidytext \
-    tm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT \
-    sentencepiece tokenizers.bpe SnowballC stm tokenizers fastText \
+    tm stm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT \
+    sentencepiece tokenizers.bpe SnowballC tokenizers fastText \
     stopwords doc2vec word2vec udpipe Ruchardet quanteda widyr quanteda.textplots textclean syuzhet topicmodels.etm uwot textplot epitools \
     tableone \
     latex2exp distill equatiomatic ftExtra minidown \
@@ -139,7 +139,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     cronR drat OpenCL spatialsample \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
-    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt myownrobs
+    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt myownrobs vitals openai
 
 #python関連
 RUN apt-get install -y 
