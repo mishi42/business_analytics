@@ -12,7 +12,6 @@ services:
       - MLFLOW_TRACKING_URI='http://mlflow:5000'
     ports:
       - 8787:8787
-      - 3838:3838
       - 9991:9991
       - 9992:9992
       - 9993:9993
@@ -20,13 +19,12 @@ services:
       - 9995:9995
     volumes:
       - ../../work/:/mnt
+      - ollama_env:/work/ollama_env/
+      - shinydata:/srv/shiny-server/
+      - shinylog:/srv/shinylog/
     #working_dir: /work
     tty: true
-    restart: always
-    deploy:
-      resources:
-        limits:
-          memory: '50g'
+    restart: always      
     depends_on:
       - ollama
       - mlflow
@@ -42,25 +40,42 @@ services:
     build :
        context: .
        dockerfile: ./ollama.dockerfile
-    volumes:
-      - ollama:/root/.ollama
+    mem_limit: 4g
+    memswap_limit: 4g
     ports:
       - 11434:11434
     tty: true
     restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: '20g'
+    volumes:
+      - ollama_env:/root/.ollama
     networks:
       - r_ollama_net
 
+  shiny_app:
+    container_name: shiny_app
+    build:
+      context: . 
+      dockerfile: ./shiny.dockerfile    
+    ports:
+      - 3838:3838
+    mem_limit: 2g
+    memswap_limit: 2g
+    tty: true
+    restart: unless-stopped
+    volumes:
+      - shinydata:/srv/shiny-server
+      - shinylog:/var/log/shiny-server/ 
+    networks:
+      - r_ollama_net
+  
   mlflow:
     container_name: mlflow
     build:
       #context: ./mlflow-tracking
       context: . 
       dockerfile: ./mlflow.dockerfile
+    mem_limit: 1g
+    memswap_limit: 1g
     expose:
       - "5000"
     ports:
@@ -68,13 +83,9 @@ services:
     command: mlflow server --backend-store-uri /work/mlruns --default-artifact-root /work/mlruns --host 0.0.0.0 --port 5000
     tty: true
     restart: always
-    deploy:
-      resources:
-        limits:
-          memory: '2g'
     networks:
       - r_ollama_net
-    
+
   #open-webui:
   #  container_name: open_webui
   #  image: ghcr.io/open-webui/open-webui:main
@@ -88,6 +99,12 @@ services:
   #  networks:
   #    - r_ollama_net
 
+  #llm_studio:
+    #  container_name: llm_studio
+    #image: h2oairelease/h2oai-llmstudio-app:latest
+    #ports:
+    #  - 10101 :10101 
+
   selenium:
     container_name: selenium_chrome
     build :
@@ -98,10 +115,6 @@ services:
       - 7900:7900
     restart: always
     tty: true
-    deploy:
-      resources:
-        limits:
-          memory: '2g'
     networks:
       - r_ollama_net
 
@@ -118,15 +131,10 @@ services:
     #  - ./volumes/app/mattermost/:/mattermost/
     tty: true
     restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: '2g'
     depends_on:
       - db
     networks:
       - r_ollama_net
-      
   db:
     container_name: postgres
     image: postgres:16-alpine
@@ -139,10 +147,6 @@ services:
     #  - ./volumes/db:/var/lib/postgresql/data
     tty: true
     restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: '2g'
     networks:
       - r_ollama_net
 
@@ -153,14 +157,8 @@ services:
       - 9443:9443
       - 9000:9000
     restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: '2g'
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    networks:
-      - r_ollama_net
+    #volumes:
+    #  - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
   r_ollama_net:
@@ -168,4 +166,7 @@ networks:
 
 volumes:
   ollama:
+  shinydata:
+  shinylog:
+  ollama_env: 
   #open-webui:
