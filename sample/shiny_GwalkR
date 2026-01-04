@@ -1,5 +1,6 @@
 library(shiny)
 library(GWalkR)
+library(bslib)
 
 ui <- page_sidebar(
   title = "GWalkR",
