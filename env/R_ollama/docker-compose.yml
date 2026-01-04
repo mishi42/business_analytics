@@ -40,8 +40,8 @@ services:
     build :
        context: .
        dockerfile: ./ollama.dockerfile
-    mem_limit: 4g
-    memswap_limit: 4g
+    mem_limit: 8g
+    memswap_limit: 8g
     ports:
       - 11434:11434
     tty: true
@@ -58,13 +58,16 @@ services:
       dockerfile: ./shiny.dockerfile    
     ports:
       - 3838:3838
-    mem_limit: 2g
-    memswap_limit: 2g
+    mem_limit: 4g
+    memswap_limit: 4g
     tty: true
     restart: unless-stopped
     volumes:
       - shinydata:/srv/shiny-server
       - shinylog:/var/log/shiny-server/ 
+    depends_on:
+      - ollama
+      - rstudio
     networks:
       - r_ollama_net
   
@@ -110,6 +113,8 @@ services:
     build :
        context: .
        dockerfile: ./selenium.dockerfile
+    mem_limit: 1g
+    memswap_limit: 1g
     ports:
       - 4444:4444 
       - 7900:7900
@@ -121,6 +126,8 @@ services:
   mattermost:
     container_name: mattermost
     image: mattermost/mattermost-team-edition
+    mem_limit: 1g
+    memswap_limit: 1g
     ports:
       - 8765:8065 
     environment:
@@ -135,9 +142,12 @@ services:
       - db
     networks:
       - r_ollama_net
+
   db:
     container_name: postgres
     image: postgres:16-alpine
+    mem_limit: 1g
+    memswap_limit: 1g
     environment:
       - POSTGRES_USER=mmuser
       - POSTGRES_PASSWORD=password
@@ -153,6 +163,8 @@ services:
   portainer:
     image: portainer/portainer-ce:alpine
     container_name: portainer
+    mem_limit: 1g
+    memswap_limit: 1g
     ports:
       - 9443:9443
       - 9000:9000
