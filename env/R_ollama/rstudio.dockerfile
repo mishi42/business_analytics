@@ -235,6 +235,23 @@ RUN sudo adduser user01 --disabled-password --gecos "" && \
 #RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' > ~/.Rprofile && \
 #         'options(.lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >>  ~/.Rprofile  
 
+RUN mkdir /work/shiny/ && \
+    mkdir /srv/shiny-server/
+
+#WORKDIR /work/shiny/
+
+#Shiny server
+#RUN gdebi shiny-server-1.5.23.1030-x86_64.rpm && \
+#    wget https://download3.rstudio.org/ubuntu-20.04/x86_64/shiny-server-1.5.23.1030-amd64.deb && \
+#    gdebi -n shiny-server-1.5.23.1030-amd64.deb
+
+RUN groupadd shiny_user && \
+    for u in rstudio user01 user02 user03 user04 user05 user06 user07 user08; do \
+        usermod -aG shiny_user "$u" \
+    done && \
+    chown -R rstudio:shiny_user /srv/shiny-server/ && \
+    chmod -R 2775 /srv/shiny-server/
+
 
 #compose fileからのディレクトリの位置。フォルダはコピーされない
 #COPY ./shell/ /work/env/
