@@ -107,7 +107,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych statmod embed XICOR \
     catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer gtrendsR rattle \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle shinymodels lime tidypredict \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette pricesensitivitymeter sjPlot \
@@ -135,7 +135,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tableone \
     latex2exp distill equatiomatic ftExtra minidown \
     rvest \
-    polite selenium targets wdman RSelenium \
+    polite selenium targets wdman RSelenium gtrendsR \
     cronR drat OpenCL spatialsample \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
