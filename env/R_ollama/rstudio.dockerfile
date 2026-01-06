@@ -77,8 +77,8 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("mlr-org/mlr3viz");' 
 
 
-RUN  R -q -e 'data_server.py <- system.file("mcp", "data_server.py",package = "wizrd"); \
-              server <- start_mcp(data_server.py);'
+#RUN  R -q -e 'data_server.py <- system.file("mcp", "data_server.py",package = "wizrd"); \
+#              server <- start_mcp(data_server.py);'
 
 RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
@@ -169,7 +169,7 @@ RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRU
              #textrpp_initialize(save_profile = TRUE);
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
-RUN R -q -e 'rdevtools::install_github("farach/huggingfaceR"); \
+RUN R -q -e 'devtools::install_github("farach/huggingfaceR"); \
              huggingfaceR::hf_python_depends(); \
              ' 
 
