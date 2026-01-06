@@ -202,7 +202,7 @@ RUN R -q -e 'install.packages("radiant", repos = "https://radiant-rstats.github.
 # add user
 RUN for u in rstudio user01 user02 user03 user04 user05 user06 user07 user08; do \
         sudo adduser $u --disabled-password --gecos "" ; \
-        sudo echo $u:'$u' | /usr/sbin/chpasswd ; \
+        sudo echo $u:"$u" | /usr/sbin/chpasswd ; \
         touch /home/$u/.mecabrc ; \
         echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/$u/.mecabrc ; \
     done
