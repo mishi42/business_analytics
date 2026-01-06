@@ -114,7 +114,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \ 
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
-    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster \
+    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster sjmisc here \
     CLVTools bayesQR quantreg rqPen tvReg \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
