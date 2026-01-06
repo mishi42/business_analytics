@@ -22,6 +22,9 @@ services:
       - ollama_env:/work/ollama_env/
       - shinydata:/srv/shiny-server/
       - shinylog:/srv/shinylog/
+      - home:/home
+      - rstudio-config:/etc/rstudio
+      - rstudio-state:/var/lib/rstudio-server      
     #working_dir: /work
     tty: true
     restart: always      
@@ -181,4 +184,7 @@ volumes:
   shinydata:
   shinylog:
   ollama_env: 
+  home:
+  rstudio-config:
+  rstudio-state:
   #open-webui:
