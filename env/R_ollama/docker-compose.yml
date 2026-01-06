@@ -172,8 +172,9 @@ services:
       - 9443:9443
       - 9000:9000
     restart: unless-stopped
-    #volumes:
-    #  - /var/run/docker.sock:/var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
 
 networks:
   r_ollama_net:
@@ -187,4 +188,5 @@ volumes:
   home:
   rstudio-config:
   rstudio-state:
+  portainer_data:
   #open-webui:
