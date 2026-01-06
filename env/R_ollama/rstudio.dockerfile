@@ -222,7 +222,7 @@ RUN mkdir /work/shiny/ && \
 
 RUN groupadd shiny_user && \
     for u in rstudio user01 user02 user03 user04 user05 user06 user07 user08; do \
-        usermod -aG shiny_user "$u" \
+        usermod -aG shiny_user "$u"; \
     done && \
     chown -R rstudio:shiny_user /srv/shiny-server/ && \
     chmod -R 2775 /srv/shiny-server/
