@@ -119,7 +119,9 @@ RUN install2.r --error --skipmissing --skipinstalled \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
-    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust　funtimes pdc latrend tsfeatures otsfeatures kml momentuHMM MARSS mHMMbayes \
+    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust　funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes \
+    networkDynamic \
+    tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics \
     DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr \
     mice \
