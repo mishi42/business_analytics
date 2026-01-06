@@ -169,7 +169,8 @@ RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRU
              #textrpp_initialize(save_profile = TRUE);
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
-RUN R -q -e 'devtools::install_github("farach/huggingfaceR"); \
+RUN R -q -e 'reticulate::install_miniconda();  \
+             devtools::install_github("farach/huggingfaceR"); \
              huggingfaceR::hf_python_depends(); \
              ' 
 
