@@ -43,8 +43,6 @@ services:
     build :
        context: .
        dockerfile: ./ollama.dockerfile
-    mem_limit: 8g
-    memswap_limit: 8g
     ports:
       - 11434:11434
     tty: true
@@ -58,9 +56,11 @@ services:
     container_name: shiny_app
     build:
       context: . 
-      dockerfile: ./shiny.dockerfile    
+      dockerfile: ./shiny.dockerfile  
     ports:
       - 3838:3838
+    environment:
+      - TZ=Asia/Tokyo
     mem_limit: 4g
     memswap_limit: 4g
     tty: true
