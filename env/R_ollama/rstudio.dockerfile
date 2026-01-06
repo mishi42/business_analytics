@@ -199,38 +199,12 @@ RUN R -q -e 'install.packages("radiant", repos = "https://radiant-rstats.github.
              install.packages("radiant.update", repos = "https://radiant-rstats.github.io/minicran/")'
 
 # add user
-RUN sudo adduser user01 --disabled-password --gecos "" && \
-    sudo echo user01:'user01' | /usr/sbin/chpasswd && \
-    touch /home/user01/.mecabrc && \
-    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user01/.mecabrc && \
-    sudo adduser user02 --disabled-password --gecos "" && \
-    sudo echo user02:'user02' | /usr/sbin/chpasswd && \
-    touch /home/user02/.mecabrc && \
-    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user02/.mecabrc && \
-    sudo adduser user03 --disabled-password --gecos "" && \
-    sudo echo user03:'user03' | /usr/sbin/chpasswd && \
-    touch /home/user03/.mecabrc && \
-    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user03/.mecabrc && \
-    sudo adduser user04 --disabled-password --gecos "" && \
-    sudo echo user04:'user04' | /usr/sbin/chpasswd && \
-    touch /home/user04/.mecabrc && \
-    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user04/.mecabrc && \
-    sudo adduser user05 --disabled-password --gecos "" && \
-    sudo echo user05:'user05' | /usr/sbin/chpasswd && \
-    touch /home/user05/.mecabrc && \
-    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user05/.mecabrc && \
-    sudo adduser user06 --disabled-password --gecos "" && \
-    sudo echo user06:'user06' | /usr/sbin/chpasswd && \
-    touch /home/user06/.mecabrc && \
-    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user06/.mecabrc && \
-    sudo adduser user07 --disabled-password --gecos "" && \
-    sudo echo user07:'user07' | /usr/sbin/chpasswd && \
-    touch /home/user07/.mecabrc && \
-    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user07/.mecabrc && \
-    sudo adduser user08 --disabled-password --gecos "" && \
-    sudo echo user08:'user08' | /usr/sbin/chpasswd && \
-    touch /home/user08/.mecabrc && \
-    echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/user08/.mecabrc
+RUN for u in rstudio user01 user02 user03 user04 user05 user06 user07 user08; do \
+        sudo adduser $u --disabled-password --gecos "" ; \
+        sudo echo $u:'$u' | /usr/sbin/chpasswd ; \
+        touch /home/$u/.mecabrc ; \
+        echo "dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd" > /home/$u/.mecabrc ; \
+    done
 
 #RUN echo 'options(.gander_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' > ~/.Rprofile && \
 #         'options(.lang_chat = ellmer::chat_ollama(model = "gemma3:4b",base_url = "http://ollama:11434"))' >>  ~/.Rprofile  
