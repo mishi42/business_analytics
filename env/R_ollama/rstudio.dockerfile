@@ -152,16 +152,17 @@ ENV PATH="/opt/reticulate/bin:${PATH}"
 
 RUN /opt/reticulate/bin/pip install --upgrade pip && \
     /opt/reticulate/bin/pip install --no-cache-dir \
-        Cython nevergrad numpy sentencepiece transformers scikit-learn \
+        Cython nevergrad numpy sentencepiece transformers scikit-learn spacy \
         torch
 
 #RUN /opt/reticulate/bin/pip install --no-build-isolation youtokentome 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
-RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE);\
-             remotes::install_github("quanteda/quanteda.sentiment"); \
+RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE)'
+RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              devtools::install_github("quanteda/quanteda.tidy"); \
              pak::pak("quanteda/quanteda.llm"); \
+             spacyr::spacy_install(); \
              spacyr::spacy_install(lang_models = "ja_core_news_sm"); \
              devtools::install_github("theharmonylab/topics"); \
              devtools::install_github("theharmonylab/talk");'
