@@ -159,10 +159,10 @@ ENV RETICULATE_PYTHON=/opt/reticulate/bin/python
 ENV PATH="/opt/reticulate/bin:${PATH}"
 
 RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE);\
-             reticulate::pip_install( \
-              c("numpy", "spacy", "transformers", "torch","nevergrad","Cython","sentencepiece","scikit-learn"), \
+             reticulate::py_install( \
+              packages = c("numpy", "spacy", "transformers", "torch","nevergrad","Cython","sentencepiece","scikit-learn"), \
               pip = TRUE \
-             ) \
+             ); \
              '
 
 #RUN /opt/reticulate/bin/pip install --upgrade pip && \
@@ -173,6 +173,8 @@ RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRU
 ##RUN /opt/reticulate/bin/pip install --no-build-isolation youtokentome 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
+RUN mkdir /work/model_pretrained/
+
 #RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE)'
 RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              devtools::install_github("quanteda/quanteda.tidy"); \
@@ -180,20 +182,17 @@ RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              spacyr::spacy_install(lang_models = c("ja_core_news_trf","en_core_web_sm")); \
              devtools::install_github("theharmonylab/topics"); \
              devtools::install_github("theharmonylab/talk"); \
-             devtools::install_github("farach/huggingfaceR",upgrade = "never") ; \
-             huggingfaceR::hf_python_depends(); \
+             sentencepiece::sentencepiece_download_model("Japanese", vocab_size = 200000,model = "/work/model_pretrained/"); \
              '
+             
+             #devtools::install_github("farach/huggingfaceR",upgrade = "never") ; \
+             #huggingfaceR::hf_python_depends(); \
              #talkrpp_install(prompt = FALSE); \
              #talkrpp_initialize(save_profile = TRUE); \
              #textrpp_install(prompt = FALSE); \
              #textrpp_initialize(save_profile = TRUE);
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
-
-RUN mkdir /work/model_pretrained/
-WORKDIR /work/model_pretrained/
-
-RUN R -q -e 'sentencepiece::sentencepiece_download_model("Japanese", vocab_size = 200000,model = "/work/model_pretrained/")'
 
 # NEologd
 RUN mkdir /work/dic/
