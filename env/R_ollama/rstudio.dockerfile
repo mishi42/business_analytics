@@ -180,7 +180,7 @@ RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              devtools::install_github("quanteda/quanteda.tidy"); \
              text::textrpp_install(pip = T); \
              pak::pak("quanteda/quanteda.llm"); \
-             spacyr::spacy_install(lang_models = c("ja_core_news_trf","en_core_web_sm")); \
+             spacy_download_langmodel(c("ja_core_news_trf","en_core_web_sm")); \
              devtools::install_github("theharmonylab/topics"); \
              devtools::install_github("theharmonylab/talk"); \
              sentencepiece::sentencepiece_download_model("Japanese", vocab_size = 200000,model = "/work/model_pretrained/"); \
