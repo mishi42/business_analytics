@@ -20,7 +20,7 @@ RUN apt-get update && \
     libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev libgsl0-dev \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
-    libboost-filesystem-dev libudunits2-dev \
+    libboost-filesystem-dev libudunits2-dev libomp-dev \
     sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git build-essential
 
 RUN apt-get install -y python3 python3-venv python3-dev python3-pip
@@ -178,6 +178,7 @@ RUN mkdir /work/model_pretrained/
 #RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE)'
 RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              devtools::install_github("quanteda/quanteda.tidy"); \
+             text::textrpp_install(pip = T); \
              pak::pak("quanteda/quanteda.llm"); \
              spacyr::spacy_install(lang_models = c("ja_core_news_trf","en_core_web_sm")); \
              devtools::install_github("theharmonylab/topics"); \
