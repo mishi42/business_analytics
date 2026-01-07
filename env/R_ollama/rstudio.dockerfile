@@ -98,7 +98,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     summarytools \
     dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels \
     flexdashboard \
-    shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML \
+    shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs \
     tidylog \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior dapper cat bcf BMA loo \
@@ -146,16 +146,22 @@ RUN install2.r --error --skipmissing --skipinstalled \
 #python関連
 RUN apt-get install -y 
 
-RUN python3 -m venv /opt/reticulate
-ENV RETICULATE_PYTHON=/opt/reticulate/bin/python
-ENV PATH="/opt/reticulate/bin:${PATH}"
+RUN R -q -e 'reticulate::use_miniconda(); \
+             reticulate::conda_create('r-reticulate', 'python=3.13'); \
+             reticulate::conda_install('r-reticulate', c('spacy')); \
+             reticulate::use_condaenv("r-reticulate", required = TRUE); \
+             '
 
-RUN /opt/reticulate/bin/pip install --upgrade pip && \
-    /opt/reticulate/bin/pip install --no-cache-dir \
-        Cython nevergrad numpy sentencepiece transformers scikit-learn spacy \
-        torch
+#RUN python3 -m venv /opt/reticulate
+#ENV RETICULATE_PYTHON=/opt/reticulate/bin/python
+#ENV PATH="/opt/reticulate/bin:${PATH}"
 
-#RUN /opt/reticulate/bin/pip install --no-build-isolation youtokentome 
+#RUN /opt/reticulate/bin/pip install --upgrade pip && \
+#    /opt/reticulate/bin/pip install --no-cache-dir \
+#        Cython nevergrad numpy sentencepiece transformers scikit-learn spacy \
+#        torch
+
+##RUN /opt/reticulate/bin/pip install --no-build-isolation youtokentome 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
 RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE)'
