@@ -173,7 +173,7 @@ RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
 RUN R -q -e 'reticulate::install_miniconda();  \
-             devtools::install_github("farach/huggingfaceR"); \
+             devtools::install_github("farach/huggingfaceR",upgrade = 'never'); \
              huggingfaceR::hf_python_depends(); \
              ' 
 
