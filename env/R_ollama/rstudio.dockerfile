@@ -144,17 +144,26 @@ RUN install2.r --error --skipmissing --skipinstalled \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt myownrobs vitals openai
 
 #python関連
-RUN apt-get install -y 
+#RUN mkdir /opt/reticulate
 
-RUN R -q -e 'reticulate::use_miniconda(); \
-             reticulate::conda_create('r-reticulate', 'python=3.13'); \
-             reticulate::conda_install('r-reticulate', c('spacy')); \
-             reticulate::use_condaenv("r-reticulate", required = TRUE); \
+#RUN R -q -e 'reticulate::install_miniconda(); \
+#             reticulate::use_miniconda("/opt/reticulate"); \
+#             reticulate::conda_create("reticulate_py313", "python=3.13"); \
+#             reticulate::conda_install("reticulate_py313", \
+#             c("spacy","Cython","nevergrad","numpy","sentencepiece","transformers","torch")); \
+#             reticulate::use_condaenv("reticulate_py313", required = TRUE); \
+#             '
+
+RUN python3 -m venv /opt/reticulate
+ENV RETICULATE_PYTHON=/opt/reticulate/bin/python
+ENV PATH="/opt/reticulate/bin:${PATH}"
+
+RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE);\
+             reticulate::pip_install( \
+              c("numpy", "spacy", "transformers", "torch","nevergrad","Cython","sentencepiece","scikit-learn"), \
+              pip = TRUE \
+             ) \
              '
-
-#RUN python3 -m venv /opt/reticulate
-#ENV RETICULATE_PYTHON=/opt/reticulate/bin/python
-#ENV PATH="/opt/reticulate/bin:${PATH}"
 
 #RUN /opt/reticulate/bin/pip install --upgrade pip && \
 #    /opt/reticulate/bin/pip install --no-cache-dir \
@@ -164,24 +173,22 @@ RUN R -q -e 'reticulate::use_miniconda(); \
 ##RUN /opt/reticulate/bin/pip install --no-build-isolation youtokentome 
 # RUN R -q -e 'ragnar_find_links("https://r4ds.hadley.nz")'
 
-RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE)'
+#RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE)'
 RUN R -q -e 'remotes::install_github("quanteda/quanteda.sentiment"); \
              devtools::install_github("quanteda/quanteda.tidy"); \
              pak::pak("quanteda/quanteda.llm"); \
-             spacyr::spacy_install(); \
-             spacyr::spacy_install(lang_models = "ja_core_news_sm"); \
+             spacyr::spacy_install(lang_models = c("ja_core_news_trf","en_core_web_sm")); \
              devtools::install_github("theharmonylab/topics"); \
-             devtools::install_github("theharmonylab/talk");'
+             devtools::install_github("theharmonylab/talk"); \
+             devtools::install_github("farach/huggingfaceR",upgrade = "never") ; \
+             huggingfaceR::hf_python_depends(); \
+             '
              #talkrpp_install(prompt = FALSE); \
              #talkrpp_initialize(save_profile = TRUE); \
              #textrpp_install(prompt = FALSE); \
              #textrpp_initialize(save_profile = TRUE);
              #spacyr::spacy_download_langmodel("ja_core_news_sm")' 
 
-RUN R -q -e 'reticulate::install_miniconda();  \
-             devtools::install_github("farach/huggingfaceR",upgrade = 'never'); \
-             huggingfaceR::hf_python_depends(); \
-             ' 
 
 RUN mkdir /work/model_pretrained/
 WORKDIR /work/model_pretrained/
