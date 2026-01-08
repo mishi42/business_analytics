@@ -14,7 +14,7 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # Install R dependencies
 RUN install2.r --error --skipmissing --skipinstalled \
-               shinychat ellmer bslib plotly GWalkR ggplot2 shinydashboard shinyBS shinyjs 
+               shinychat ellmer bslib plotly GWalkR ggplot2 shinydashboard shinyBS shinyjs querychat
 
 # Expose the application port
 EXPOSE 3838
