@@ -156,7 +156,8 @@ RUN apt-get update && \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev libudunits2-dev libomp-dev \
-    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git build-essential
+    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git build-essential \
+    libmagick++-dev imagemagick libcurl4-openssl-dev libssl-dev libxml2-dev
 
 RUN apt-get install -y python3 python3-venv python3-dev python3-pip
     # texlive-full
