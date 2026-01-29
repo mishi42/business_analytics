@@ -166,7 +166,7 @@ ENV PATH="/opt/reticulate/bin:${PATH}"
 
 RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE);\
              reticulate::py_install( \
-              packages = c("numpy", "spacy", "transformers", "torch","nevergrad","Cython","sentencepiece","scikit-learn","boto3"), \
+              packages = c("numpy", "spacy", "transformers", "torch","nevergrad","Cython","sentencepiece","scikit-learn"), \
               pip = TRUE \
              ); \
              '
@@ -182,7 +182,8 @@ RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRU
 RUN mkdir /work/model_pretrained/
 
 #RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE)'
-RUN R -q -e 'text::textrpp_install(pip = T); \
+RUN R -q -e 'RAthena::install_boto(); \
+             text::textrpp_install(pip = T); \
              pak::pak("quanteda/quanteda.llm"); \
              spacryr::spacy_download_langmodel(c("ja_core_news_sm","en_core_web_sm")); \
              devtools::install_github("theharmonylab/topics"); \
