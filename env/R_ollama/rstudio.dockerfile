@@ -21,141 +21,6 @@ RUN apt-get update && \
     #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev libudunits2-dev libomp-dev \
-    sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git build-essential
-
-RUN apt-get install -y python3 python3-venv python3-dev python3-pip
-    # texlive-full
-
-# DVC
-RUN wget https://dvc.org/deb/dvc.list -O /etc/apt/sources.list.d/dvc.list && \
-    wget -qO - https://dvc.org/deb/iterative.asc | apt-key add - && \
-    apt update && \
-    apt install -y dvc 
-
-RUN mkdir /work && \
-    mkdir /work/env/
-#japanese font
-RUN install2.r --error --skipmissing --skipinstalled extrafont remotes showtext sysfonts tinytex BiocManager
-#RUN R -q -e 'extrafont::font_import(prompt = FALSE); \
-RUN R -q -e 'install.packages("devtools"); \
-             install.packages("pak"); \ 
-             tinytex::install_tinytex(force = T); '
-             #sysfonts::font_add("noto", "NotoSansCJKjp-Regular.otf");  \
-
-#RUN R -q -e ''
-RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
-             #remotes::install_github("m-clark/mixedup"); \
-             #remotes::install_github("nx10/httpgd"); \
-             install.packages("https://cran.r-project.org/src/contrib/Archive/notifier/notifier_1.0.0.tar.gz"); \
-             devtools::install_github("ebenmichael/augsynth"); \
-             devtools::install_github("AlbertRapp/tidychatmodels"); \
-             remotes::install_github("lawremi/wizrd"); \
-             pak::pkg_install("devOpifex/mcpr"); \
-             devtools::install_github("lchiffon/wordcloud2"); \
-             remotes::install_github("uribo/jpndistrict"); \
-             devtools::install_github("jacob-long/dpm"); \
-             devtools::install_github("soerenkuenzel/causalToolbox"); \
-             devtools::install_github("susanathey/causalTree"); \
-             devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
-             devtools::install_github("davidsjoberg/ggsankey"); \
-             devtools::install_github("GreenGrassBlueOcean/MattermostR"); \
-             BiocManager::install("Rgraphviz"); \
-             devtools::install_github("frankiethull/kuzco"); \
-             pak::pak("mlverse/lang"); \
-             install.packages("Robyn"); \
-             install.packages("reticulate");' 
-             #reticulate::install_python(version = "3.12"); \
-             #reticulate::virtualenv_create("r-reticulate"); \
-             #reticulate::py_install("nevergrad", pip = TRUE);'
-             #devtools::install_github("frankiethull/kuzco"); \
-             #remotes::install_github("bgreenwell/statlingua"); \
-             #remotes::install_github("anna-neufeld/treevalues");\
-             #devtools::install_github("heurekalabsco/axolotr"); \
-             #remotes::install_github("lawremi/wizrd") ;'
-             #remotes::install_github("mlr-org/mlr3extralearners"); \
-             #remotes::install_github("mlr-org/mlr3automl"); \
-             #remotes::install_github("mlr-org/mlr3viz");' 
-
-
-#RUN  R -q -e 'data_server.py <- system.file("mcp", "data_server.py",package = "wizrd"); \
-#              server <- start_mcp(data_server.py);'
-
-RUN install2.r --error --skipmissing --skipinstalled \
-    checkpoint \
-    pacman rmarkdown rticles DT reactable \
-    knitr kableExtra Hmisc reporttools NMOF papeR ztable xtable report \
-    sessioninfo quarto flextable flexlsx htmlTable parameters pander \
-    htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
-    excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
-    dbplyr \
-    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL RAthena noctua \
-    ggh4x \
-    ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial directlabels \
-    colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice rgl pdftools igraph qgraph jtools panelr interactions tidygraph \
-    ggraph ggupset ggcorrplot lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 \
-    vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
-    gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
-    summarytools \
-    dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels \
-    flexdashboard \
-    shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs \
-    tidylog \
-    rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
-    tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior dapper cat bcf BMA loo \
-    zipangu \
-    jpmesh kuniezu \
-    corrplot \
-    Rtsne psych statmod embed XICOR \
-    catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle shinymodels lime tidypredict plsmod \
-    mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
-    partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
-    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette pricesensitivitymeter sjPlot \
-    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
-    copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
-    fixest \
-    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster sjmisc here \
-    CLVTools bayesQR quantreg rqPen tvReg \
-    sampleSelection \
-    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
-    clickstream \
-    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust　funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM \
-    networkDynamic \
-    tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics \
-    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
-    bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr \
-    mice \
-    Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
-    ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml \
-    Rdimtools \
-    VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful \
-    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR \
-    tidytext \
-    tm stm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT \
-    sentencepiece tokenizers.bpe SnowballC tokenizers fastText \
-    stopwords doc2vec word2vec udpipe Ruchardet quanteda widFROM rocker/tidyverse
-USER root
-
-ENV LANG ja_JP.UTF-8
-ENV LC_ALL ja_JP.UTF-8
-
-RUN sed -i '$d' /etc/locale.gen \
-    && echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen \
-    && locale-gen ja_JP.UTF-8 \
-    && /usr/sbin/update-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
-
-RUN /bin/bash -c "source /etc/default/locale"
-RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-
-# 日本語フォントのインストール 
-RUN apt-get update && \
-    apt-get install -y \
-    fonts-ipaexfont fonts-noto-cjk pandoc libnotify-bin \
-    mecab libmecab-dev mecab-ipadic mecab-ipadic-utf8 \
-    libpoppler-cpp-dev libglpk40 libfftw3-dev libopencv-dev libtbb-dev libgsl0-dev \
-    #libpng-dev libjpeg-dev libfreetype6-dev libglu1-mesa-dev libgl1-mesa-dev \
-    #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
-    libboost-filesystem-dev libudunits2-dev libomp-dev \
     sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git build-essential \
     libmagick++-dev imagemagick libfontconfig1-dev libmagick++-6.q16-9 \
     libmagickwand-6.q16-6 \
@@ -222,12 +87,12 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
 RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles DT reactable \
-    knitr kableExtra Hmisc reporttools NMOF papeR ztable xtable report \
-    sessioninfo quarto flextable flexlsx htmlTable parameters pander ssh pingr \
+    knitr kableExtra Hmisc reporttools NMOF papeR ztable xtable report ssh pingr \
+    sessioninfo quarto flextable flexlsx htmlTable parameters pander \
     htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
-    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL \
+    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL RAthena noctua \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial directlabels \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice rgl pdftools igraph qgraph jtools panelr interactions tidygraph \
@@ -239,7 +104,6 @@ RUN install2.r --error --skipmissing --skipinstalled \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs \
     tidylog \
-    arsenal waldo \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior dapper cat bcf BMA loo \
     zipangu \
@@ -251,7 +115,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette pricesensitivitymeter sjPlot \
-    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \ 
+    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster sjmisc here \
