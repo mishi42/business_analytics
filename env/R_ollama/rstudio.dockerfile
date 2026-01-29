@@ -57,6 +57,9 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              pak::pkg_install("devOpifex/mcpr"); \
              devtools::install_github("lchiffon/wordcloud2"); \
              remotes::install_github("uribo/jpndistrict"); \
+             devtools::install_github("hrbrmstr/awsathena"); \
+             devtools::install_github("hrbrmstr/metis-jars"); \
+             devtools::install_github("hrbrmstr/metis-tidy"); \
              devtools::install_github("jacob-long/dpm"); \
              devtools::install_github("soerenkuenzel/causalToolbox"); \
              devtools::install_github("susanathey/causalTree"); \
@@ -87,12 +90,13 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
 RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles DT reactable \
-    knitr kableExtra Hmisc reporttools NMOF papeR ztable xtable report ssh pingr \
-    sessioninfo quarto flextable flexlsx htmlTable parameters pander \
+    knitr kableExtra Hmisc reporttools NMOF papeR ztable xtable report ssh pingr rJava \
+    sessioninfo quarto flextable flexlsx htmlTable parameters pander rio \
     htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
-    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL RAthena noctua \
+    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr duckspatial \
+    odbc RMySQL RAthena noctua AWR.Athena \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial directlabels \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice rgl pdftools igraph qgraph jtools panelr interactions tidygraph \
@@ -106,7 +110,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidylog \
     arsenal waldo \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
-    tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior dapper cat bcf BMA loo \
+    tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred bcf BMA MDPtoolbox \
+    loo DIRECT posterior dapper cat ReinforcementLearning \
     zipangu \
     jpmesh kuniezu \
     corrplot \
@@ -115,16 +120,19 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle shinymodels lime tidypredict plsmod \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
-    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette pricesensitivitymeter sjPlot \
+    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette  \
+    pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
-    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster sjmisc here \
+    AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster here \
     CLVTools bayesQR quantreg rqPen tvReg \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
     clickstream \
-    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust　funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM \
+    seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust \
+    funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM longitudinal brolgar \
+    NScluster PLNmodels future \
     networkDynamic \
     tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics \
     DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
@@ -147,7 +155,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     cronR drat OpenCL spatialsample \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
-    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt myownrobs vitals openai querychat
+    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt \
+    myownrobs vitals openai querychat localLLM
 
 #python関連
 #RUN mkdir /opt/reticulate
