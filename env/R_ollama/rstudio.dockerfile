@@ -104,6 +104,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs \
     tidylog \
+    arsenal waldo \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred posterior dapper cat bcf BMA loo \
     zipangu \
@@ -165,7 +166,7 @@ ENV PATH="/opt/reticulate/bin:${PATH}"
 
 RUN R -q -e 'reticulate::use_python("/opt/reticulate/bin/python", required = TRUE);\
              reticulate::py_install( \
-              packages = c("numpy", "spacy", "transformers", "torch","nevergrad","Cython","sentencepiece","scikit-learn"), \
+              packages = c("numpy", "spacy", "transformers", "torch","nevergrad","Cython","sentencepiece","scikit-learn","boto3"), \
               pip = TRUE \
              ); \
              '
@@ -258,9 +259,6 @@ RUN groupadd shiny_user && \
 #catdap2ext
 RUN mkdir /work/catdap
 WORKDIR /work/catdap
-
-RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
-    R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
 
 RUN curl -OL https://jasp.ism.ac.jp/ism/catdap2ext/catdap2ext_0.2.0.zip && \
     R -q -e 'install.packages("catdap2ext_0.2.0.tar.gz")'
