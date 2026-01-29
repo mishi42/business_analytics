@@ -88,7 +88,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
-    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL \
+    DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr odbc RMySQL RAthena noctua \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial directlabels \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice rgl pdftools igraph qgraph jtools panelr interactions tidygraph \
@@ -111,7 +111,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette pricesensitivitymeter sjPlot \
-    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling \ 
+    doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster sjmisc here \
@@ -157,7 +157,10 @@ RUN apt-get update && \
     #zlib1g-dev libicu-dev libgdal-dev gdal-bin libgeos-dev libproj-dev \
     libboost-filesystem-dev libudunits2-dev libomp-dev \
     sudo htop gnupg openssh-client curl wget texlive-xetex texlive-latex-base iputils-ping patch git build-essential \
-    libmagick++-dev imagemagick libcurl4-openssl-dev libssl-dev libxml2-dev
+    libmagick++-dev imagemagick libfontconfig1-dev libmagick++-6.q16-9 \
+    libmagickwand-6.q16-6 \
+    libmagickcore-6.q16-6 \
+    libcurl4-openssl-dev libssl-dev libxml2-dev 
 
 RUN apt-get install -y python3 python3-venv python3-dev python3-pip
     # texlive-full
@@ -220,7 +223,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles DT reactable \
     knitr kableExtra Hmisc reporttools NMOF papeR ztable xtable report \
-    sessioninfo quarto flextable flexlsx htmlTable parameters pander \
+    sessioninfo quarto flextable flexlsx htmlTable parameters pander ssh pingr \
     htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
