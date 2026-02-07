@@ -66,6 +66,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
              devtools::install_github("davidsjoberg/ggsankey"); \
              devtools::install_github("GreenGrassBlueOcean/MattermostR"); \
+             #devtools::install_github("daattali/shinyforms"); \
              BiocManager::install("Rgraphviz"); \
              devtools::install_github("frankiethull/kuzco"); \
              pak::pak("mlverse/lang"); \
@@ -106,7 +107,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     summarytools \
     dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels \
     flexdashboard \
-    shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs \
+    shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs shinysurveys \
     tidylog \
     arsenal waldo \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
@@ -116,7 +117,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     jpmesh kuniezu \
     corrplot \
     Rtsne psych statmod embed XICOR \
-    catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp quantmod \
+    catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp quantmod Directional circular \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle shinymodels lime tidypredict plsmod \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
