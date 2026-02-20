@@ -92,7 +92,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     checkpoint \
     pacman rmarkdown rticles DT reactable \
     knitr kableExtra Hmisc reporttools NMOF papeR ztable xtable report ssh pingr rJava \
-    sessioninfo quarto flextable flexlsx htmlTable parameters pander rio \
+    sessioninfo quarto flextable flexlsx htmlTable parameters pander rio xaringan \
     htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
