@@ -65,7 +65,7 @@ RUN pip3 install -U --ignore-installed \
 
 #LLM
 RUN pip3 install -U --ignore-installed \
-        transformers peft trl langchain langchain_ollama ollama inspect-ai chatlas mlverse-mall
+        transformers peft trl langchain langchain_ollama ollama inspect-ai chatlas mlverse-mall vllm
 
 
 #bayes
@@ -80,18 +80,28 @@ RUN pip3 install -U "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-rele
 #causal
 RUN pip3 install -U --ignore-installed \
         pgmpy lingam munkres cdt dowhy econml && \
-        #semopy causalml \
-    pip3 install obp causalnex PyBLP
+        #semopy causalml causalnex obp \
+    pip3 install pyblp causalml
 
 #image
 #RUN apt-get -y install tesseract-ocr tesseract-ocr-jpn libtesseract-dev libleptonica-dev tesseract-ocr-script-jpan tesseract-ocr-script-jpan-vert \
 #    pip install pdf2image open3d timm yolov5 pyocr opencv-python pillow PyPDF catboost
 RUN pip3 install pillow opencv-python
 
+
 #transformer
-RUN mkdir /work/dev/model/
+
+WORKDIR /
+RUN mkdir /work && \ 
+    mkdir /work/dev && \
+    mkdir /work/dev/model/ && \
+    mkdir /work/env
+
+
+ENV PATH /work:$PATH
+
 WORKDIR /work/dev/model/
-RUN pip3 install 'transformers[torch]' fugashi unidic-lite 
+RUN pip3 install 'transformers[torch]'
 #RUN python3 -c \
 #    "from transformers import BertJapaneseTokenizer; \
 #    tokenizer = BertJapaneseTokenizer.from_pretrained('cl-tohoku/bert-base-japanese-v2'); \
@@ -138,14 +148,6 @@ RUN python3 -m unidic download
 
 #RUN reboot
 
-WORKDIR /
-RUN mkdir /work
-RUN mkdir /work && \ 
-    mkdir /work/dev && \
-    mkdir /work/env
-
-ENV PATH /work:$PATH
- 
 
 #jupyter lab
 RUN apt-get install -y graphviz graphviz-dev && \
