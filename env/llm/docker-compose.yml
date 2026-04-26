@@ -1,14 +1,99 @@
-version: '3.8'
-
 services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+
   open-webui:
-    image: ghcr.io/open-webui/open-webui:latest
+    image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
     ports:
-      - "8080:8080"
-    #volumes:
-    #  - openwebui_data:/app/backend/data
+      - "3000:8080"
     environment:
-      - OLLAMA_API_BASE_URL=http://ollama:11434/api
-    #  - WEBUI_SECRET_KEY=secret_key_here 
+      - OLLAMA_BASE_URL=http://ollama:11434
+    volumes:
+      - open_webui_data:/app/backend/data
+    depends_on:
+      - ollama
     restart: unless-stopped
+
+  surrealdb:
+    image: surrealdb/surrealdb:v2
+    container_name: surrealdb
+    command: start --log info --user root --pass root rocksdb:/mydata/mydatabase.db
+    user: root
+    ports:
+      - "8000:8000"
+    volumes:
+      - surreal_data:/mydata
+    environment:
+      - SURREAL_EXPERIMENTAL_GRAPHQL=true
+    restart: unless-stopped
+
+  open-notebook:
+    image: lfnovo/open_notebook:v1-latest
+    container_name: open-notebook
+    ports:
+      - "8502:8502"
+      - "5055:5055"
+    environment:
+      - OPEN_NOTEBOOK_ENCRYPTION_KEY=change-me-to-a-long-random-secret
+      - SURREAL_URL=ws://surrealdb:8000/rpc
+      - SURREAL_USER=root
+      - SURREAL_PASSWORD=root
+      - SURREAL_NAMESPACE=open_notebook
+      - SURREAL_DATABASE=open_notebook
+      - API_URL=http://localhost:5055
+    volumes:
+      - open_notebook_data:/app/data
+    depends_on:
+      - surrealdb
+      - ollama
+    restart: unless-stopped
+
+  langflow-db:
+    image: pgvector/pgvector:pg16
+    container_name: langflow-db
+    environment:
+      - POSTGRES_USER=langflow
+      - POSTGRES_PASSWORD=langflow
+      - POSTGRES_DB=langflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - langflow_postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+  langflow:
+    image: langflowai/langflow:latest
+    container_name: langflow
+    ports:
+      - "7860:7860"
+    environment:
+      - LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@langflow-db:5432/langflow
+      - LANGFLOW_CONFIG_DIR=/app/langflow
+    #volumes:
+    #  - langflow_data:/app/langflow
+      - langflow_data:/tmp/langflow
+    depends_on:
+      - langflow-db
+      - ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_models:
+  open_webui_data:
+  surreal_data:
+  open_notebook_data:
+  langflow_postgres:
+  langflow_data:
