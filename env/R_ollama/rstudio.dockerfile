@@ -52,6 +52,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #remotes::install_github("nx10/httpgd"); \
              install.packages("https://cran.r-project.org/src/contrib/Archive/notifier/notifier_1.0.0.tar.gz"); \
              devtools::install_github("ebenmichael/augsynth"); \
+             remotes::install_github("pedrohcgs/DRDID"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              remotes::install_github("lawremi/wizrd"); \
              pak::pkg_install("devOpifex/mcpr"); \
@@ -116,12 +117,12 @@ RUN install2.r --error --skipmissing --skipinstalled \
     zipangu \
     jpmesh kuniezu \
     corrplot \
-    Rtsne psych statmod embed XICOR \
+    Rtsne psych statmod embed XICOR psychTools \
     catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp quantmod Directional circular \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle shinymodels lime tidypredict plsmod \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso \
-    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette  \
+    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet \
     pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
@@ -129,7 +130,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster here \
     CLVTools bayesQR quantreg rqPen tvReg \
     sampleSelection \
-    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift \
+    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did \
     clickstream \
     seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust \
     funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM longitudinal brolgar \
