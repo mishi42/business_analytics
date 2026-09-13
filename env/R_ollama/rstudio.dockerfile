@@ -70,6 +70,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #devtools::install_github("daattali/shinyforms"); \
              BiocManager::install("Rgraphviz"); \
              devtools::install_github("frankiethull/kuzco"); \
+             pak::pak("JamesHWade/dsprrr"); \
              pak::pak("mlverse/lang"); \
              install.packages("Robyn"); \
              install.packages("reticulate");' 
@@ -94,7 +95,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     pacman rmarkdown rticles DT reactable \
     knitr kableExtra Hmisc reporttools NMOF papeR ztable xtable report ssh pingr rJava \
     sessioninfo quarto flextable flexlsx htmlTable parameters pander rio xaringan \
-    htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat \
+    htmlwidgets htmltools gt gtsummary renv stargazer huxtable bookdown markdown docxtractr testthat pkglite \
     excel.link XLConnect readxl openxlsx Microsoft365R r2pptx officer officedown \
     dbplyr \
     DBI RODBC duckplyr arrow aws.s3 bigrquery RPostgreSQL duckdb redshift paws duckdbfs furrr duckspatial \
@@ -129,21 +130,23 @@ RUN install2.r --error --skipmissing --skipinstalled \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster here \
     CLVTools bayesQR quantreg rqPen tvReg \
+    revealedPrefs \
+    rpm revpref beezdemand behavr matchingMarkets \
     sampleSelection \
-    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did \
+    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower clusterSEs ssmrob CausalMBSTS \
     clickstream \
     seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust \
     funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM longitudinal brolgar \
     NScluster PLNmodels future \
     networkDynamic \
-    tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics \
+    tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics pvars \
     DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels policytree polle bandit contextual \
-    bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr \
+    bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr stochtree CRE DTRKernSmooth DTRreg \
     mice \
     Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml \
     Rdimtools \
-    VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful \
+    VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful RprobitB \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR DoE.base \
     tidytext \
     tm stm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT CytOpT \
