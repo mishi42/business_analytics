@@ -109,7 +109,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     summarytools \
     dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels \
     flexdashboard \
-    shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs shinysurveys \
+    shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs shinysurveys shinyquiz shinymodels shiny.ollama questionr \
     tidylog \
     arsenal waldo \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
@@ -120,9 +120,9 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych statmod embed XICOR psychTools \
     catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp quantmod Directional circular \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle shinymodels lime tidypredict plsmod \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle lime tidypredict plsmod \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary randomForestSRC \
-    partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso irt \
+    partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso irt likert formr \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet \
     pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
@@ -139,12 +139,12 @@ RUN install2.r --error --skipmissing --skipinstalled \
     funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM longitudinal brolgar \
     NScluster PLNmodels future \
     networkDynamic \
-    tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics pvars \
+    tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics pvars rCausalMGM \
     DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels policytree polle bandit contextual \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr stochtree CRE DTRKernSmooth DTRreg \
     mice \
     Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
-    ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml \
+    ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml propensity \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful RprobitB \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR DoE.base \
@@ -160,7 +160,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     cronR drat OpenCL spatialsample \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
-    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt \
+    chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt RAGFlowChainR \
     myownrobs vitals openai querychat localLLM
 
 #python関連
