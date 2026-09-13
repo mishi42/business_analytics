@@ -113,7 +113,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidylog \
     arsenal waldo \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts \
-    tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred bcf BMA MDPtoolbox \
+    tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred bcf BMA MDPtoolbox SoftBart boostPM \
     loo DIRECT posterior dapper cat ReinforcementLearning \
     zipangu \
     jpmesh kuniezu \
@@ -121,7 +121,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     Rtsne psych statmod embed XICOR psychTools \
     catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp quantmod Directional circular \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle shinymodels lime tidypredict plsmod \
-    mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
+    mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary randomForestSRC \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet \
     pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
@@ -133,7 +133,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     revealedPrefs \
     rpm revpref beezdemand behavr matchingMarkets \
     sampleSelection \
-    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower clusterSEs ssmrob CausalMBSTS \
+    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower clusterSEs ssmrob CausalMBSTS DIDmultiplegt did2s bacondecomp DIDmultiplegtDYN \
     clickstream \
     seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust \
     funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM longitudinal brolgar \
