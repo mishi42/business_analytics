@@ -101,7 +101,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial directlabels \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice rgl pdftools igraph qgraph jtools panelr interactions tidygraph \
-    ggraph ggupset ggcorrplot ggdensity lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 ggpval \
+    ggraph ggupset ggcorrplot ggdensity lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 ggpval ggcube \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
     summarytools \
@@ -120,7 +120,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp quantmod Directional circular \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle shinymodels lime tidypredict plsmod \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary \
-    partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom \
+    partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette  \
     pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
@@ -136,7 +136,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     NScluster PLNmodels future \
     networkDynamic \
     tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics \
-    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer fairmodels \
+    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels policytree polle bandit contextual \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr \
     mice \
     Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
@@ -145,7 +145,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR DoE.base \
     tidytext \
-    tm stm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT \
+    tm stm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT CytOpT \
     sentencepiece tokenizers.bpe SnowballC tokenizers fastText \
     stopwords doc2vec word2vec udpipe Ruchardet quanteda widyr quanteda.textplots textclean syuzhet topicmodels.etm uwot textplot \
     epitools quanteda.tidy quanteda.textstats quanteda.textmodels readtext \
