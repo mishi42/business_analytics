@@ -131,7 +131,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster here \
     CLVTools bayesQR quantreg rqPen tvReg \
     revealedPrefs \
-    rpm revpref beezdemand behavr matchingMarkets micEcon \
+    rpm revpref beezdemand behavr matchingMarkets micEcon hBayesDM \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower clusterSEs ssmrob CausalMBSTS DIDmultiplegt did2s bacondecomp DIDmultiplegtDYN \
     clickstream \
@@ -148,6 +148,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful RprobitB \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR DoE.base \
+    NeuroDecodeR \
+    psycho rdecision \
     tidytext \
     tm stm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT CytOpT \
     sentencepiece tokenizers.bpe SnowballC tokenizers fastText \
