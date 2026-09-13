@@ -124,7 +124,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle lime tidypredict plsmod \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary randomForestSRC \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso irt likert formr \
-    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet hdpGLM PReMiuM \
+    semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet hdpGLM PReMiuM FFTrees rfdists \
     pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
@@ -132,7 +132,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster here \
     CLVTools bayesQR quantreg rqPen tvReg \
     revealedPrefs \
-    rpm revpref beezdemand behavr matchingMarkets micEcon hBayesDM \
+    rpm revpref beezdemand beezdiscounting behavr matchingMarkets micEcon hBayesDM stratEst gtree gtreeWebPlay z Tree DeclareDesign randomizr markets piar PriceIndices intrinsicFRP TTR \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower clusterSEs ssmrob CausalMBSTS DIDmultiplegt did2s bacondecomp DIDmultiplegtDYN \
     clickstream \
@@ -150,9 +150,9 @@ RUN install2.r --error --skipmissing --skipinstalled \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful RprobitB \
     conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR DoE.base \
     NeuroDecodeR \
-    psycho rdecision \
+    psycho rdecision cognitivemodels RNifti oro.nifti neurobase eegUtils fsbrain \
     tidytext \
-    tm stm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT CytOpT \
+    tm stm stringr stringi topicmodels lda LDAvis textmineR gutenbergr methods spacyr text GermaParl transport gsaot T4transport approxOT CytOpT r5r \
     sentencepiece tokenizers.bpe SnowballC tokenizers fastText \
     stopwords doc2vec word2vec udpipe Ruchardet quanteda widyr quanteda.textplots textclean syuzhet topicmodels.etm uwot textplot \
     epitools quanteda.tidy quanteda.textstats quanteda.textmodels readtext \
