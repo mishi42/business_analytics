@@ -108,7 +108,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
     summarytools \
-    dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels \
+    dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels datadriftR \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs shinysurveys shinyquiz shinymodels shiny.ollama questionr \
     tidylog \
@@ -122,15 +122,15 @@ RUN install2.r --error --skipmissing --skipinstalled \
     Rtsne psych statmod embed XICOR psychTools \
     catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp quantmod Directional circular \
     tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle lime tidypredict plsmod \
-    mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary randomForestSRC \
-    partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso irt likert formr \
+    mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary randomForestSRC cramR \
+    partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso irt likert formr tidytransit \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet hdpGLM PReMiuM FFTrees rfdists \
     pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
     fixest \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster here \
-    CLVTools bayesQR quantreg rqPen tvReg \
+    CLVTools bayesQR quantreg rqPen tvReg MCI \
     revealedPrefs \
     rpm revpref beezdemand beezdiscounting behavr matchingMarkets micEcon hBayesDM stratEst gtree gtreeWebPlay z Tree DeclareDesign randomizr markets piar PriceIndices intrinsicFRP TTR \
     sampleSelection \
@@ -141,14 +141,14 @@ RUN install2.r --error --skipmissing --skipinstalled \
     NScluster PLNmodels future \
     networkDynamic \
     tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics pvars rCausalMGM \
-    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels policytree polle bandit contextual \
+    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels policytree polle bandit contextual banditsCI maq \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr stochtree CRE DTRKernSmooth DTRreg \
     mice \
     Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
     ssgraph huge BayesianGLasso BayesianLasso imputeMissings Synth tidysynth gsynth panelView PanelMatch microsynth tidyhte rddapp counterfactuals iml propensity \
     Rdimtools \
     VBsparsePCA mlogit flexmix pscl arules arulesSequences arulesViz arulesCBA gmnl flexclust useful RprobitB \
-    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR DoE.base \
+    conjoint bayesm invgamma recsys recommenderlab recosystem NMF nestedLogit apollo BDgraph ChoiceModelR DoE.base cbcTools \
     NeuroDecodeR \
     psycho rdecision cognitivemodels RNifti oro.nifti neurobase eegUtils fsbrain \
     tidytext \
@@ -164,7 +164,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt RAGFlowChainR \
-    myownrobs vitals openai querychat localLLM
+    myownrobs vitals openai querychat localLLM btw commons
 
 #python関連
 #RUN mkdir /opt/reticulate
