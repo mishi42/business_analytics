@@ -71,6 +71,8 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #devtools::install_github("daattali/shinyforms"); \
              BiocManager::install("Rgraphviz"); \
              devtools::install_github("frankiethull/kuzco"); \
+             devtools::install_github("malcolmbarrett/tidysmd"); \
+             remotes::install_github("CoryMcCartan/causaltbl"); \
              pak::pak("JamesHWade/dsprrr"); \
              pak::pak("mlverse/lang"); \
              install.packages("Robyn"); \
