@@ -65,6 +65,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("jacob-long/dpm"); \
              devtools::install_github("soerenkuenzel/causalToolbox"); \
              devtools::install_github("susanathey/causalTree"); \
+             devtools::install_github("BS1125/CMAverse"); \
              devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
              devtools::install_github("davidsjoberg/ggsankey"); \
              devtools::install_github("GreenGrassBlueOcean/MattermostR"); \
