@@ -146,7 +146,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     networkDynamic \
     tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics pvars rCausalMGM \
     DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels iml shapr causalDisco \
-    policytree polle bandit contextual banditsCI maq \
+    policytree polle bandit contextual banditsCI maq fastpolicytree OPL sparsepolicytree \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr stochtree CRE DTRKernSmooth DTRreg \
     mice \
     Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
