@@ -144,7 +144,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     NScluster PLNmodels future \
     networkDynamic \
     tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics pvars rCausalMGM \
-    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels iml shapr \
+    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels iml shapr causalDisco \
     policytree polle bandit contextual banditsCI maq \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr stochtree CRE DTRKernSmooth DTRreg \
     mice \
