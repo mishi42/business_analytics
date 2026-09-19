@@ -133,7 +133,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     AER lmtest clubSandwich sandwich dlm KFAS bsts marginaleffects BLPestimatoR rms plm marketr mfx DescTools tidyclust cluster here \
     CLVTools bayesQR quantreg rqPen tvReg MCI \
     revealedPrefs \
-    rpm revpref beezdemand beezdiscounting behavr matchingMarkets micEcon hBayesDM stratEst gtree gtreeWebPlay z Tree DeclareDesign randomizr markets piar PriceIndices intrinsicFRP TTR \
+    rpm revpref beezdemand beezdiscounting behavr matchingMarkets micEcon hBayesDM stratEst gtree gtreeWebPlay \
+    zTree DeclareDesign randomizr markets piar PriceIndices intrinsicFRP TTR \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower \
     clusterSEs ssmrob CausalMBSTS DIDmultiplegt did2s bacondecomp DIDmultiplegtDYN halfmoon PSW \
@@ -143,7 +144,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     NScluster PLNmodels future \
     networkDynamic \
     tsna dnr ndtv btergm graphicalVAR mlVAR psychonetrics pvars rCausalMGM \
-    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels policytree polle bandit contextual banditsCI maq \
+    DALEX tidytreatment MatchIt grf fwildclusterboot survey rbounds randomForestExplainer ggRandomForests fairmodels iml shapr \
+    policytree polle bandit contextual banditsCI maq \
     bnlearn pcalg censReg bartCause iml shapviz finalfit BaylorEdPsych simputation Matching cobalt WeightIt pwr stochtree CRE DTRKernSmooth DTRreg \
     mice \
     Amelia VIM missMDA missForest naniar miceadds MissMech missRanger JointAI \
