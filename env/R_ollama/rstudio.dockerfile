@@ -71,7 +71,6 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              #devtools::install_github("daattali/shinyforms"); \
              BiocManager::install("Rgraphviz"); \
              devtools::install_github("frankiethull/kuzco"); \
-             devtools::install_github("malcolmbarrett/tidysmd"); \
              remotes::install_github("CoryMcCartan/causaltbl"); \
              pak::pak("JamesHWade/dsprrr"); \
              pak::pak("mlverse/lang"); \
@@ -136,7 +135,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     revealedPrefs \
     rpm revpref beezdemand beezdiscounting behavr matchingMarkets micEcon hBayesDM stratEst gtree gtreeWebPlay z Tree DeclareDesign randomizr markets piar PriceIndices intrinsicFRP TTR \
     sampleSelection \
-    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower clusterSEs ssmrob CausalMBSTS DIDmultiplegt did2s bacondecomp DIDmultiplegtDYN \
+    CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower \
+    clusterSEs ssmrob CausalMBSTS DIDmultiplegt did2s bacondecomp DIDmultiplegtDYN halfmoon \
     clickstream \
     seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust \
     funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM longitudinal brolgar \
