@@ -110,7 +110,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
     summarytools \
-    dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels datadriftR \
+    dlookr GWalkR explore DataExplorer modelsummary skimr dataMaid dlookr gmodels datadriftR ggEDA \
     flexdashboard \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs shinysurveys shinyquiz shinymodels shiny.ollama questionr \
     tidylog \
@@ -127,6 +127,9 @@ RUN install2.r --error --skipmissing --skipinstalled \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary randomForestSRC cramR \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso irt likert formr tidytransit \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet hdpGLM PReMiuM FFTrees rfdists \
+    lpSolve \
+    ompr ROI caRamel mco SimInf queueing CVXR TSP sensitivity BayesianTools pforeach ahp ahpsurvey AHPtools AHPWR Rglpk orloca \
+    proxy FinCal Benchmarking inventorize planr roptim DEoptim ompr.roi ROI.plugin.glpk \
     pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
