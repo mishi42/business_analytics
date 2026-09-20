@@ -129,7 +129,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet hdpGLM PReMiuM FFTrees rfdists \
     lpSolve \
     ompr ROI caRamel mco SimInf queueing CVXR TSP sensitivity BayesianTools pforeach ahp ahpsurvey AHPtools AHPWR Rglpk orloca \
-    proxy FinCal Benchmarking inventorize planr roptim DEoptim ompr.roi ROI.plugin.glpk nloptr simmer queueing critpath \
+    proxy FinCal Benchmarking inventorize planr roptim DEoptim ompr.roi ROI.plugin.glpk nloptr simmer queueing critpath deSolve \
     pricesensitivitymeter sjPlot sjlabelled sjmisc gee geepack mgcv \
     doFuture parameters agua h2o h2oEnsemble sparklyr rsparkling multidplyr \  
     copula evd extRemes bayescopulareg VineCopula mdgc mvnmle \
