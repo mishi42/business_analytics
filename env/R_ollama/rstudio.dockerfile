@@ -106,7 +106,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial directlabels \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice rgl pdftools igraph qgraph jtools panelr interactions tidygraph infer \
-    ggraph ggupset ggcorrplot ggdensity lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 ggpval ggcube \
+    ggraph ggupset ggcorrplot ggdensity lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 ggpval ggcube ggokabeito \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
     summarytools \
@@ -123,7 +123,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     corrplot \
     Rtsne psych statmod embed XICOR psychTools \
     catdap stacks bonsai glmnet vars rBayesianOptimization modeltime lgcp quantmod Directional circular insurancerating priceR spatialrisk \
-    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer rattle lime tidypredict plsmod \
+    tidymodels xgboost lightgbm ranger normtest lars nlme luz Rserve kernlab prophet tidyquant torch isotree qcc fastDummies texreg rminer \
+    see rattle lime tidypredict plsmod MCI \
     mlr3 mlr3verse mlr3pipelines mlr3learners mlr3torch mlr3tuning mlr3summary randomForestSRC cramR \
     partykit rpart.plot earth BVAR finetune sem semTools tidyrules plumber slackr jsonlite tidycat vroom tidySEM lavaanPlot ggm BGGM abglasso irt likert formr tidytransit \
     semPlot lavaan lme4 mclust FactoMineR factoextra FactoInvestigate kohonen ggsom dirichletprocess BNPmix DPpackage BNPdensity Silhouette EGAnet bootnet hdpGLM PReMiuM FFTrees rfdists \
