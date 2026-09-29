@@ -115,7 +115,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     shiny shinydashboard bslib shinytest shinyFiles shinychat ERSA shinyPredict ShinyItemAnalysis shinyML shinyBS shinyjs shinysurveys shinyquiz shinymodels shiny.ollama questionr \
     tidylog \
     arsenal waldo \
-    rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts abtest BayesCACE \
+    rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts abtest BayesCACE bartXViz \
     tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred bcf BMA MDPtoolbox SoftBart boostPM \
     loo DIRECT posterior dapper cat ReinforcementLearning \
     zipangu \
