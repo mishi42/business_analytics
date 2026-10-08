@@ -144,7 +144,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     zTree DeclareDesign randomizr markets piar PriceIndices intrinsicFRP TTR \
     sampleSelection \
     CausalImpact rdd rdrobust rddensity RDHonest DoubleML tools4uplift did causalplot rdmulti rdpower \
-    clusterSEs ssmrob CausalMBSTS DIDmultiplegt did2s bacondecomp DIDmultiplegtDYN halfmoon PSW \
+    clusterSEs ssmrob CausalMBSTS DIDmultiplegt did2s bacondecomp DIDmultiplegtDYN halfmoon PSW fect ddml \
     clickstream \
     seqHMM superheat depmixS4 edeaR stagedtrees markovchain dtw ChannelAttribution completejourney HMM HiddenMarkov dtwclust TSclust \
     funtimes pdc latrend tsfeatures otsfeatures kml kml3d momentuHMM MARSS mHMMbayes CDGHMM longitudinal brolgar \
