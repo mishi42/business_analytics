@@ -53,6 +53,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              install.packages("https://cran.r-project.org/src/contrib/Archive/notifier/notifier_1.0.0.tar.gz"); \
              devtools::install_github("ebenmichael/augsynth"); \
              remotes::install_github("pedrohcgs/DRDID"); \
+             devtools:: install_github("lzy318/HonestDiDFEct") ;\
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              remotes::install_github("lawremi/wizrd"); \
              devtools::install_github("alesmascaro/BCDAG"); \
