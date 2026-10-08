@@ -118,7 +118,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     tidylog \
     arsenal waldo \
     rstan rstanarm brms bayesplot bayestestR bayesAB BART MCMCpack tidybayes multilevelmod R2BayesX dynamite dbarts abtest BayesCACE bartXViz \
-    tidyposterior dprng bartMachine broom.mixed rstantools shinystan projpred bcf BMA MDPtoolbox SoftBart boostPM \
+    tidyposterior dprng bartMachine broom.mixed broom.helpers rstantools shinystan projpred bcf BMA MDPtoolbox SoftBart boostPM \
     loo DIRECT posterior dapper cat ReinforcementLearning \
     zipangu \
     jpmesh kuniezu \
