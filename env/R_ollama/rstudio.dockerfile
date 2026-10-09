@@ -57,6 +57,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("AlbertRapp/tidychatmodels"); \
              remotes::install_github("lawremi/wizrd"); \
              devtools::install_github("alesmascaro/BCDAG"); \
+             remotes::install_github("lazasaurus-ai/promptmanageR"); \
              pak::pkg_install("devOpifex/mcpr"); \
              devtools::install_github("lchiffon/wordcloud2"); \
              remotes::install_github("uribo/jpndistrict"); \
@@ -77,6 +78,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              remotes::install_github("CoryMcCartan/causaltbl"); \
              pak::pak("Arnold-Kakas/puppeteeR"); \
              pak::pak("JamesHWade/dsprrr"); \
+             pak::pak("simonpcouch/predictive"); \
              pak::pak("mlverse/lang"); \
              install.packages("Robyn"); \
              install.packages("reticulate");' 
@@ -179,7 +181,8 @@ RUN install2.r --error --skipmissing --skipinstalled \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt RAGFlowChainR \
-    myownrobs vitals openai querychat localLLM btw commons ggpal llmflow FakeDataR gptstudio llmclean ravel
+    myownrobs vitals openai querychat localLLM btw commons ggpal llmflow FakeDataR gptstudio llmclean ravel \
+    debrief chores pangoling chatterbox whisper searcher
 
 #python関連
 #RUN mkdir /opt/reticulate
