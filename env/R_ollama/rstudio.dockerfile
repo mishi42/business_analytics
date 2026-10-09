@@ -69,6 +69,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("BS1125/CMAverse"); \
              devtools::install_github("mlflow/mlflow", subdir = "mlflow/R/mlflow"); \
              devtools::install_github("davidsjoberg/ggsankey"); \
+             remotes::install_github("lazasaurus-ai/routerchainR"); \
              devtools::install_github("GreenGrassBlueOcean/MattermostR"); \
              #devtools::install_github("daattali/shinyforms"); \
              BiocManager::install("Rgraphviz"); \
@@ -177,7 +178,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt RAGFlowChainR \
-    myownrobs vitals openai querychat localLLM btw commons
+    myownrobs vitals openai querychat localLLM btw commons ggpal llmflow
 
 #python関連
 #RUN mkdir /opt/reticulate
