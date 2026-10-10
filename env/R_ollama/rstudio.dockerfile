@@ -62,6 +62,7 @@ RUN R -q -e 'install.packages("RMeCab", repos = "https://rmecab.jp/R"); \
              devtools::install_github("lchiffon/wordcloud2"); \
              remotes::install_github("uribo/jpndistrict"); \
              devtools::install_github("hrbrmstr/awsathena"); \
+             devtools::install_github("frankiethull/ggpal2"); \
              devtools::install_github("hrbrmstr/metis-jars"); \
              devtools::install_github("hrbrmstr/metis-tidy"); \
              devtools::install_github("jacob-long/dpm"); \
@@ -111,7 +112,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     ggh4x \
     ggExtra lemon ggthemes hrbrthemes patchwork plotly ggfortify ggspatial janitor ggeffects ggdendro ggalluvial directlabels \
     colormap ggridges ggdist GGally ggstatsplot ggrepel dbplot ggmice rgl pdftools igraph qgraph jtools panelr interactions tidygraph infer \
-    ggraph ggupset ggcorrplot ggdensity lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 \ 
+    ggraph ggupset ggcorrplot ggdensity lindia ggheatmap ggsurvfit ggstats ggwordcloud tidyterra networkD3 multiUS \ 
     ggpval ggcube ggokabeito ggtern \
     vcd vcdExtra viridis ggpubr ggsci survminer ggforce cowplot ggalt ggsignif scatterplot3d lattice \
     gplots modelbased rnaturalearth imager tesseract magick opencv OpenImageR sketcher materialmodifier biopixR \
@@ -181,7 +182,7 @@ RUN install2.r --error --skipmissing --skipinstalled \
     progress sen2r miniCRAN languageserver here janitor \
     ellmer \
     chatLLM tidyllm ollamar rollama LLMAgentR chattr gander ragnar mall mcptools emend tidyprompt RAGFlowChainR \
-    myownrobs vitals openai querychat localLLM btw commons ggpal llmflow FakeDataR gptstudio llmclean ravel \
+    myownrobs vitals openai querychat localLLM btw commons llmflow FakeDataR gptstudio llmclean ravel \
     debrief chores pangoling chatterbox whisper searcher
 
 #python関連
